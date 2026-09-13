@@ -61,7 +61,7 @@
 
   <div class="card">
     <p><strong>c) Website check result (public report)</strong></p>
-    <p class="dim">If you submit a URL for checking, the app fetches the publicly available HTML code of that page on the server and evaluates technical SEO signals (e.g. title tag length, presence of a meta description, headings, mobile view). We store the result and publish it as a separate, search-engine-indexable page at <code>https://seovip.web.app/report/&lt;domain&gt;</code>. This is technical information about a publicly available web presence, not personal data within the meaning of GDPR — the exception would be if the checked page itself contained personal data directly within the examined technical elements (e.g. a name in the meta description); such data could then briefly appear in the report as a citation of publicly published content. The report stays published until someone has the page checked again (the report is overwritten), or until the site&rsquo;s owner requests its removal — see section 5.</p>
+    <p class="dim">If you submit a URL for checking, the app fetches the publicly available HTML code of that page on the server and evaluates technical SEO signals (e.g. title tag length, presence of a meta description, headings, mobile view). We store the result and publish it as a separate, search-engine-indexable page at <code>https://seovip.web.app/report/&lt;domain&gt;</code>. This is technical information about a publicly available web presence, not personal data within the meaning of GDPR — the exception would be if the checked page itself contained personal data directly within the examined technical elements (e.g. a name in the meta description); such data could then briefly appear in the report as a citation of publicly published content. The report stays published until someone has the page checked again (the report is overwritten), until the site&rsquo;s owner requests its removal (see section 5), or for at most 90 days since the last check — older reports are deleted automatically.</p>
   </div>
 
   <div class="card">
@@ -78,7 +78,7 @@
   <h2>5. How long we retain data</h2>
   <ul>
     <li>IP address for limiting the number of checks: max. 24 hours (rolling window, then overwritten).</li>
-    <li>Public report on a checked page: until replaced by a new check of the same domain, or until the site&rsquo;s owner requests its removal via the contact above.</li>
+    <li>Public report on a checked page: until replaced by a new check of the same domain, until the site&rsquo;s owner requests its removal via the contact above, or for at most 90 days since the last check (then deleted automatically).</li>
     <li>Check history and app settings in your browser: until you delete them yourself, or until your browser deletes them.</li>
     <li>Email correspondence regarding a report-removal request: for as long as necessary to handle it, and for any related documentation that it was handled.</li>
   </ul>

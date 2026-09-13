@@ -61,7 +61,7 @@
 
   <div class="card">
     <p><strong>c) Výsledek kontroly webové stránky (veřejný report)</strong></p>
-    <p class="dim">Zadáte-li ke kontrole URL adresu, appka na serveru stáhne veřejně dostupný HTML kód té stránky a vyhodnotí technické SEO signály (např. délku title tagu, přítomnost meta popisu, nadpisy, mobilní zobrazení). Výsledek uložíme a zveřejníme jako samostatnou, vyhledávači indexovatelnou stránku na adrese <code>https://seovip.web.app/report/&lt;doména&gt;</code>. Jde o technické informace o veřejně dostupné webové prezentaci, ne o osobní údaje ve smyslu GDPR — výjimkou by bylo, kdyby kontrolovaná stránka sama obsahovala osobní údaje přímo ve zkoumaných technických prvcích (např. jméno v meta popisu); ty by se pak mohly krátce objevit i v reportu jako citace veřejně publikovaného obsahu. Report zůstává zveřejněný, dokud stránku někdo nenechá zkontrolovat znovu (report se přepíše), nebo dokud o jeho odstranění nepožádá vlastník webu — viz bod 5.</p>
+    <p class="dim">Zadáte-li ke kontrole URL adresu, appka na serveru stáhne veřejně dostupný HTML kód té stránky a vyhodnotí technické SEO signály (např. délku title tagu, přítomnost meta popisu, nadpisy, mobilní zobrazení). Výsledek uložíme a zveřejníme jako samostatnou, vyhledávači indexovatelnou stránku na adrese <code>https://seovip.web.app/report/&lt;doména&gt;</code>. Jde o technické informace o veřejně dostupné webové prezentaci, ne o osobní údaje ve smyslu GDPR — výjimkou by bylo, kdyby kontrolovaná stránka sama obsahovala osobní údaje přímo ve zkoumaných technických prvcích (např. jméno v meta popisu); ty by se pak mohly krátce objevit i v reportu jako citace veřejně publikovaného obsahu. Report zůstává zveřejněný, dokud stránku někdo nenechá zkontrolovat znovu (report se přepíše), dokud o jeho odstranění nepožádá vlastník webu (viz bod 5), nebo nejdéle 90 dní od poslední kontroly — starší reporty appka automaticky maže.</p>
   </div>
 
   <div class="card">
@@ -78,7 +78,7 @@
   <h2>5. Jak dlouho údaje uchováváme</h2>
   <ul>
     <li>IP adresa pro omezení počtu kontrol: max. 24 hodin (rolling okno, pak se přepisuje).</li>
-    <li>Veřejný report o kontrolované stránce: dokud není nahrazen novou kontrolou stejné domény, nebo dokud o jeho odstranění nepožádá vlastník webu na kontaktu výše.</li>
+    <li>Veřejný report o kontrolované stránce: dokud není nahrazen novou kontrolou stejné domény, dokud o jeho odstranění nepožádá vlastník webu na kontaktu výše, nebo nejdéle 90 dní od poslední kontroly (pak se maže automaticky).</li>
     <li>Historie kontrol a nastavení appky ve vašem prohlížeči: dokud je sami nesmažete, nebo dokud je nesmaže váš prohlížeč.</li>
     <li>E-mailová komunikace ohledně žádosti o odstranění reportu: po dobu nutnou k jejímu vyřízení a případné dokumentaci, že k vyřízení došlo.</li>
   </ul>
