@@ -1801,7 +1801,7 @@
       fetch(API_BASE + "/api/check", {
         method: "POST",
         headers: checkHeaders,
-        body: JSON.stringify({ url: raw })
+        body: JSON.stringify({ url: raw, lang: "en" })
       }).then(function(res){
         return res.json().then(function(body){
           if(!res.ok) throw new Error(body && body.error ? body.error : ("Server responded with error " + res.status));
