@@ -130,6 +130,7 @@
   .topbar-brand{
     display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ui-text);
     font-family:'Manrope',sans-serif;font-weight:700;font-size:16px;min-width:0;
+    cursor:default;
   }
   .topbar-brand img{width:24px;height:24px;flex:none;border-radius:6px;}
   .topbar-brand-prefix{
@@ -790,11 +791,9 @@
 
   <footer class="app-footer">
     <div class="wrap">
-      <p>If you upload an HTML file instead of a website address, the check runs purely locally in your browser and is never sent anywhere.</p>
-      <p>For convenience, the app stores a short history of recent checks (address/file name and score) — purely locally in your browser (localStorage). It’s never sent anywhere, no one else can see it, and you can delete it at any time with the “Clear history” button.</p>
-      <p>The check only evaluates the uploaded HTML file as it is — it doesn’t replace an audit by an SEO specialist, nor does it measure search rankings.</p>
       <div class="footer-links">
         <a href="privacy.html">🔒 Privacy Policy</a>
+        <a href="https://seovip.web.app/nedavno-kontrolovane" target="_blank" rel="noopener">🌍 Recently checked sites</a>
       </div>
     </div>
   </footer>
@@ -1696,6 +1695,41 @@
     var UNLOCK_CODE_HASH = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     var UNLOCK_STORAGE_KEY = "seochecker_unlocked_v1";
 
+    // Hidden switch for the app owner: 10 clicks on the topbar icon
+    // (within 2 seconds) asks for a code, and once verified (only its
+    // SHA-256 fingerprint, same as UNLOCK_CODE_HASH above) turns off the
+    // daily check limit for this device — sent as an X-Owner-Key header,
+    // verified by the backend (functions/index.js).
+    var OWNER_BYPASS_HASH = "f8d670a5f6282fb5bc5c8262b7ddfe861dd2785d32afacf4af1be495dee0f170";
+    var OWNER_BYPASS_STORAGE_KEY = "seochecker_owner_key_v1";
+    function getOwnerKey(){
+      try{ return window.localStorage.getItem(OWNER_BYPASS_STORAGE_KEY) || ""; }
+      catch(e){ return ""; }
+    }
+    (function(){
+      var brand = document.querySelector(".topbar-brand");
+      if(!brand) return;
+      var clicks = 0, lastClick = 0;
+      brand.addEventListener("click", function(e){
+        e.preventDefault(); // the logo is just a brand mark, don't jump to #top
+        var now = Date.now();
+        clicks = (now - lastClick < 2000) ? clicks + 1 : 1;
+        lastClick = now;
+        if(clicks < 10) return;
+        clicks = 0;
+        if(getOwnerKey()){
+          try{ window.localStorage.removeItem(OWNER_BYPASS_STORAGE_KEY); }catch(e){ /* ignore */ }
+          window.alert("The daily check limit is back on for this device.");
+          return;
+        }
+        var code = window.prompt("Code to turn off the daily check limit:");
+        if(code && sha256(code) === OWNER_BYPASS_HASH){
+          try{ window.localStorage.setItem(OWNER_BYPASS_STORAGE_KEY, code); }catch(e){ /* ignore */ }
+          window.alert("The daily check limit is off for this device.");
+        }
+      });
+    })();
+
     var urlForm = document.getElementById("url-check-form");
     var urlInput = document.getElementById("site-url-input");
     var urlSubmitBtn = document.getElementById("url-submit-btn");
@@ -1745,9 +1779,12 @@
       urlSubmitBtn.disabled = true;
       startLoadingMessages(T.loadingMessagesUrl, "url-status-region");
 
+      var ownerKey = getOwnerKey();
+      var checkHeaders = { "Content-Type": "application/json" };
+      if(ownerKey) checkHeaders["X-Owner-Key"] = ownerKey;
       fetch(API_BASE + "/api/check", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: checkHeaders,
         body: JSON.stringify({ url: raw })
       }).then(function(res){
         return res.json().then(function(body){
