@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEOVIP — Free SEO check for your website</title>
+
+<link rel="icon" href="./seochecker-favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="./seochecker-favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./seochecker-favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./seochecker-apple-touch-icon.png">
+<link rel="manifest" href="./seochecker-manifest.json">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SEOVIP">
+
+<meta name="description" content="Free SEO check for your website. Enter an address and get an overview of SEO signals — meta tags, mobile view, content, social sharing and indexability. No registration.">
+<meta name="author" content="SEOVIP">
+<link rel="canonical" href="https://webzen2026.github.io/seovip/en/">
+<link rel="alternate" hreflang="cs" href="https://webzen2026.github.io/seovip/">
+<link rel="alternate" hreflang="en" href="https://webzen2026.github.io/seovip/en/">
+<link rel="alternate" hreflang="x-default" href="https://webzen2026.github.io/seovip/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SEOVIP">
+<meta property="og:title" content="SEOVIP — Free SEO check for your website">
+<meta property="og:description" content="Free SEO check for your website. Enter an address and get an overview of SEO signals — meta tags, mobile view, content, social sharing and indexability. No registration.">
+<meta property="og:url" content="https://webzen2026.github.io/seovip/en/">
+<meta property="og:image" content="https://webzen2026.github.io/seovip/seochecker-og-image-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SEOVIP">
+<meta name="twitter:description" content="Free SEO check for your website. Enter an address and get an overview of SEO signals — meta tags, mobile view, content, social sharing and indexability. No registration.">
+<meta name="twitter:image" content="https://webzen2026.github.io/seovip/seochecker-og-image-en.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SEOVIP",
+  "alternateName": "SEOCHECKER",
+  "url": "https://webzen2026.github.io/seovip/",
+  "inLanguage": ["cs", "en"],
+  "description": "Free SEO check for your website. Enter an address and get an overview of SEO signals — meta tags, mobile view, content, social sharing and indexability. No registration.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SEOVIP",
+    "url": "https://webzen2026.github.io/seovip"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is SEOVIP?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A free tool that checks your website at a given address, or evaluates an uploaded HTML file directly in your browser — and shows key SEO signals: meta tags, mobile view, content, social sharing and indexability." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the tool free, and do I need to register?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the tool is completely free and requires no registration." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does SEOCHECKER store my data?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on how you use SEOCHECKER. If you enter a website address, we fetch the page on our server and store the result as a public page that Google can also find — so don’t use this mode for unindexed or private content. If you upload an HTML file instead, the check runs purely locally in your browser and is never sent anywhere. For convenience, your browser also stores a short history of recent checks (name/address and score) locally on your device — you can delete it at any time." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the check fail for some files?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most often the file isn’t a valid HTML export of your site, or it’s corrupted or empty. Try exporting the page again and uploading the resulting .html file once more." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until SEO changes show up in search?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Small fixes, like the title or meta description, can show up within days to weeks. Bigger changes to content or site structure usually take weeks to months." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ui-bg-0:#f8fafc;
+    --ui-bg-1:#ffffff;
+    --ui-bg-2:#ffffff;
+    --ui-line:#dfe6ee;
+    --ui-text:#0f172a;
+    --ui-text-dim:#64748b;
+    --ui-accent:#0891b2;
+    --ui-accent-glow:#0891b2;
+    --pass:#16a34a;
+    --warn:#d97706;
+    --fail:#dc2626;
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:var(--ui-bg-0);color:var(--ui-text);
+    font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body{line-height:1.55;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
+    outline:2px solid var(--ui-accent);outline-offset:2px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- topbar ---------- */
+  .topbar{
+    display:flex;align-items:center;gap:10px;padding:12px 20px;
+    background:var(--ui-bg-1);border-bottom:1px solid var(--ui-line);
+    flex-wrap:wrap;row-gap:8px;position:sticky;top:0;z-index:40;
+  }
+  .topbar-brand{
+    display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ui-text);
+    font-family:'Manrope',sans-serif;font-weight:700;font-size:16px;min-width:0;
+  }
+  .topbar-brand img{width:24px;height:24px;flex:none;border-radius:6px;}
+  .topbar-brand-prefix{
+    font-weight:600;font-size:11px;letter-spacing:.04em;color:var(--ui-text-dim);
+    white-space:nowrap;
+  }
+  @media(max-width:480px){.topbar-brand-prefix{display:none;}}
+  .topbar-sub{color:var(--ui-text-dim);font-size:12.5px;display:none;}
+  @media(min-width:760px){.topbar-sub{display:block;}}
+  .topbar-spacer{flex:1;min-width:8px;}
+  .topbar-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;row-gap:8px;justify-content:flex-end;}
+  .save-btn{
+    background:transparent;color:var(--ui-text);border:1px solid var(--ui-line);padding:7px 12px;
+    border-radius:8px;font-family:'Inter',sans-serif;font-weight:600;font-size:12.5px;
+    cursor:pointer;transition:border-color .15s,color .15s;white-space:nowrap;
+    text-decoration:none;display:inline-flex;align-items:center;gap:5px;flex:none;
+  }
+  .save-btn:hover{border-color:var(--ui-accent);color:var(--ui-accent);}
+  @media(max-width:560px){
+    .save-btn{padding:7px 9px;}
+    .save-btn span{display:none;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    width:100vw;margin-left:calc(50% - 50vw);
+    padding:52px 0 26px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse 620px 320px at 92% -10%, rgba(8,145,178,.16), transparent 65%),
+      radial-gradient(ellipse 480px 260px at 0% 105%, rgba(217,119,6,.10), transparent 70%);
+  }
+  .hero-kicker{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ui-text-dim);margin:0 0 10px;
+  }
+  .hero h1{
+    font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:-.01em;
+    font-size:clamp(34px,7.4vw,54px);line-height:1.04;margin:0 0 16px;
+  }
+  .hero h1 .accent{color:var(--ui-accent);}
+  .hero-tagline{
+    font-family:'Manrope',sans-serif;font-weight:600;
+    font-size:clamp(18px,3vw,21px);color:var(--ui-text);margin:0 0 12px;max-width:22ch;
+  }
+  .hero p{font-size:16.5px;color:var(--ui-text-dim);max-width:54ch;margin:0 0 26px;}
+
+  form#url-form,form#url-check-form{
+    display:flex;flex-direction:column;gap:10px;
+    background:var(--ui-bg-2);border:1px solid var(--ui-line);border-radius:var(--radius);padding:14px;
+  }
+  @media(min-width:600px){form#url-form,form#url-check-form{flex-direction:row;align-items:stretch;padding:6px 6px 6px 16px;}}
+  .field-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ui-text-dim);}
+  .input-col{flex:1;display:flex;flex-direction:column;justify-content:center;gap:2px;}
+  #submit-btn,#url-submit-btn,#license-submit-btn{
+    font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
+    background:var(--ui-accent);color:#fff;border:none;border-radius:8px;
+    padding:14px 22px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    gap:8px;white-space:nowrap;
+  }
+  #submit-btn:hover,#url-submit-btn:hover,#license-submit-btn:hover{background:#0e7490;}
+  #submit-btn:disabled,#url-submit-btn:disabled,#license-submit-btn:disabled{background:var(--ui-line);color:var(--ui-text-dim);cursor:default;}
+  #submit-btn svg,#url-submit-btn svg,#license-submit-btn svg{transition:transform .15s ease;}
+  #submit-btn:hover svg,#url-submit-btn:hover svg,#license-submit-btn:hover svg{transform:translateX(2px);}
+
+  .choose-files-btn{
+    align-self:flex-start;background:var(--ui-bg-1);color:var(--ui-text);border:1px solid var(--ui-line);
+    border-radius:8px;padding:9px 14px;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;
+    cursor:pointer;transition:border-color .15s,color .15s;
+  }
+  .choose-files-btn:hover{border-color:var(--ui-accent);color:var(--ui-accent);}
+  .file-hint{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ui-text-dim);
+    margin:10px 0 0;max-width:56ch;
+  }
+  .site-url-input{
+    background:transparent;border:none;color:var(--ui-text);font-family:'Inter',sans-serif;
+    font-size:16px;padding:8px 4px;width:100%;
+  }
+  .site-url-input:focus{outline:none;}
+  .permalink-box{
+    margin-top:14px;background:var(--ui-bg-2);border:1px solid var(--ui-line);border-radius:8px;
+    padding:12px 14px;
+  }
+  .permalink-row{display:flex;gap:8px;margin-top:6px;}
+  .permalink-input{
+    flex:1;min-width:0;background:var(--ui-bg-1);border:1px solid var(--ui-line);border-radius:8px;
+    color:var(--ui-text);padding:9px 10px;font-family:'IBM Plex Mono',monospace;font-size:13px;
+  }
+  .license-gate{
+    margin-top:14px;background:var(--ui-bg-2);border:1px solid var(--ui-accent);border-radius:var(--radius);
+    padding:16px;
+  }
+  .license-gate-text{font-size:14px;color:var(--ui-text-dim);margin:4px 0 12px;}
+  .license-gate-text a{font-weight:600;}
+  form#license-form{
+    display:flex;flex-direction:column;gap:10px;
+    background:var(--ui-bg-1);border:1px solid var(--ui-line);border-radius:8px;padding:6px 6px 6px 12px;
+  }
+  @media(min-width:600px){form#license-form{flex-direction:row;align-items:stretch;}}
+  .file-mode-details{margin-top:22px;}
+  .file-mode-details summary{
+    cursor:pointer;color:var(--ui-text-dim);font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+    user-select:none;padding:4px 0;
+  }
+  .file-mode-details summary:hover{color:var(--ui-accent);}
+  .file-mode-details form#url-form{margin-top:12px;}
+  .selected-files{
+    display:flex;flex-direction:column;gap:4px;margin-top:8px;max-height:220px;overflow-y:auto;
+  }
+  .selected-file-row{
+    display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ui-text-dim);
+  }
+  .selected-file-row.is-page{cursor:pointer;}
+  .selected-file-row.is-page:hover{background:var(--ui-bg-2);}
+  .selected-file-row input[type="radio"]{accent-color:var(--ui-accent);flex:none;}
+  .selected-file-row .fname{color:var(--ui-text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .selected-file-row .ftag{
+    flex:none;font-size:10.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--ui-text-dim);
+    border:1px solid var(--ui-line);border-radius:4px;padding:1px 5px;
+  }
+
+  #status-region,#url-status-region,#license-status-region{
+    margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:13.5px;
+    color:var(--ui-text-dim);min-height:20px;
+  }
+  #status-region[data-state="error"],#url-status-region[data-state="error"],#license-status-region[data-state="error"]{color:var(--fail);}
+  .status-details{margin-top:8px;}
+  .status-details summary{cursor:pointer;color:var(--ui-text-dim);font-size:12px;user-select:none;}
+  .status-details summary:hover{color:var(--ui-accent);}
+  .status-details pre{
+    margin:6px 0 0;padding:8px 10px;background:var(--ui-bg-2);border:1px solid var(--ui-line);
+    border-radius:8px;font-size:11.5px;line-height:1.5;color:var(--ui-text-dim);
+    white-space:pre-wrap;word-break:break-word;
+  }
+  .spinner{
+    display:inline-block;width:12px;height:12px;border:2px solid rgba(8,145,178,.25);
+    border-top-color:var(--ui-accent);border-radius:50%;animation:spin .7s linear infinite;
+    vertical-align:-1px;margin-right:8px;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .history-wrap{margin-top:22px;}
+  .history-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .history-head h3{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;
+    letter-spacing:.03em;color:var(--ui-text-dim);margin:0;font-weight:600;
+  }
+  .history-clear{
+    background:none;border:none;color:var(--ui-text-dim);font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;text-decoration:underline;cursor:pointer;padding:0;
+  }
+  .history-clear:hover{color:var(--ui-accent);}
+  .history-list{display:flex;flex-direction:column;gap:6px;}
+  .history-row{display:flex;align-items:stretch;gap:6px;}
+  .history-item{
+    flex:1;display:flex;align-items:center;gap:10px;min-width:0;
+    background:var(--ui-bg-2);border:1px solid var(--ui-line);border-radius:8px;
+    padding:8px 10px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;
+  }
+  .history-item:hover{border-color:var(--ui-accent);}
+  .history-dot{flex:none;width:8px;height:8px;border-radius:50%;}
+  .history-dot.pass{background:var(--pass);}
+  .history-dot.warn{background:var(--warn);}
+  .history-dot.fail{background:var(--fail);}
+  .history-host{
+    flex:1;min-width:0;font-family:'IBM Plex Mono',monospace;font-size:13px;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .history-score{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ui-text-dim);flex:none;}
+  .history-remove{
+    flex:none;width:34px;background:var(--ui-bg-2);border:1px solid var(--ui-line);border-radius:8px;
+    color:var(--ui-text-dim);cursor:pointer;font-size:13px;
+  }
+  .history-remove:hover{color:var(--fail);border-color:var(--fail);}
+  .history-note{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ui-text-dim);margin:10px 0 0;}
+
+  /* ---------- results ---------- */
+  #results{display:none;padding:34px 0 56px;border-top:1px solid var(--ui-line);margin-top:8px;}
+  #results.visible{display:block;}
+  .analyzed-for{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ui-text-dim);
+    margin-bottom:22px;word-break:break-all;
+  }
+  .summary{
+    display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center;
+    padding-bottom:28px;border-bottom:1px solid var(--ui-line);margin-bottom:26px;
+  }
+  @media(min-width:560px){.summary{flex-direction:row;text-align:left;align-items:center;}}
+  .gauge-holder{position:relative;flex:none;width:132px;height:132px;}
+  .gauge-holder svg{width:100%;height:100%;transform:rotate(-90deg);}
+  .gauge-track{fill:none;stroke:var(--ui-line);stroke-width:10;}
+  .gauge-fill{
+    fill:none;stroke-width:10;stroke-linecap:round;
+    stroke-dasharray:326.7;stroke-dashoffset:326.7;transition:stroke-dashoffset 1s ease;
+  }
+  .gauge-fill.pass{stroke:var(--pass);}
+  .gauge-fill.warn{stroke:var(--warn);}
+  .gauge-fill.fail{stroke:var(--fail);}
+  .gauge-number{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;}
+  .gauge-number b{font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:500;line-height:1;}
+  .gauge-number small{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ui-text-dim);margin-top:2px;}
+  .summary-text h2{font-family:'Manrope',sans-serif;font-size:20px;margin:0 0 8px;}
+  .summary-text p{margin:0;color:var(--ui-text-dim);}
+
+  .quick-wins{margin-bottom:32px;}
+  .quick-wins h3{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;
+    letter-spacing:.03em;color:var(--ui-text-dim);margin:0 0 10px;font-weight:600;
+  }
+  .quick-wins ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .quick-wins li{
+    display:flex;gap:10px;align-items:flex-start;font-size:14px;padding:10px 12px;
+    background:var(--ui-bg-2);border:1px solid var(--ui-line);border-left:3px solid var(--warn);
+    border-radius:6px;
+  }
+  .quick-wins li.crit{border-left-color:var(--fail);}
+  .quick-wins li strong{color:var(--ui-text);}
+
+  .category{margin-bottom:6px;}
+  .category-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    padding:14px 0 8px;border-bottom:1px solid var(--ui-line);
+  }
+  .category-head h3{font-family:'Manrope',sans-serif;font-size:17px;font-weight:600;margin:0;}
+  .category-score{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ui-text-dim);}
+  .check-row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--ui-line);align-items:flex-start;}
+  .check-icon{
+    flex:none;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;color:#0f172a;margin-top:1px;
+  }
+  .check-icon.pass{background:var(--pass);}
+  .check-icon.warn{background:var(--warn);}
+  .check-icon.fail{background:var(--fail);color:#fff;}
+  .check-body p.label{margin:0 0 3px;font-weight:600;font-size:14.5px;color:var(--ui-text);}
+  .check-body p.detail{margin:0;color:var(--ui-text-dim);font-size:13.5px;word-break:break-word;}
+
+  .reset-link{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ui-accent);
+    background:none;border:none;text-decoration:underline;cursor:pointer;padding:0;margin-top:12px;
+  }
+
+  .results-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;}
+  .export-pdf-btn{
+    margin-top:12px;background:var(--ui-bg-2);color:var(--ui-text);border:1px solid var(--ui-line);
+    border-radius:8px;padding:8px 14px;font-family:'Inter',sans-serif;font-weight:600;font-size:13px;
+    cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:border-color .15s,color .15s;
+  }
+  .export-pdf-btn:hover{border-color:var(--ui-accent);color:var(--ui-accent);}
+
+  /* ---------- banner s nabídkou instalace jako appky ---------- */
+  .install-banner{background:var(--ui-bg-1);border-bottom:1px solid var(--ui-line);}
+  .install-banner[hidden]{display:none;}
+  .install-banner-inner{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:12px 20px;}
+  .install-banner-text{flex:1;min-width:200px;display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--ui-text-dim);}
+  .install-banner-text strong{color:var(--ui-text);font-family:'Manrope',sans-serif;font-size:14px;}
+  .install-banner-actions{display:flex;align-items:center;gap:8px;flex:none;}
+  .install-banner-btn{
+    background:var(--ui-accent);color:#fff;border:none;border-radius:8px;padding:9px 16px;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;
+  }
+  .install-banner-btn:hover{background:#0e7490;}
+  .install-banner-btn:disabled{background:var(--ui-line);color:var(--ui-text-dim);cursor:default;}
+  .install-banner-dismiss{
+    background:transparent;border:1px solid var(--ui-line);color:var(--ui-text-dim);border-radius:8px;
+    width:30px;height:30px;cursor:pointer;font-size:13px;flex:none;
+  }
+  .install-banner-dismiss:hover{border-color:var(--ui-accent);color:var(--ui-accent);}
+
+  /* ---------- articles ---------- */
+  .articles-wrap{border-top:1px solid var(--ui-line);padding:44px 0 20px;}
+  .articles-wrap h2{font-family:'Manrope',sans-serif;font-size:24px;margin:0 0 6px;}
+  .articles-wrap>.wrap>p.lead{color:var(--ui-text-dim);margin:0 0 22px;max-width:56ch;}
+  .article{
+    background:var(--ui-bg-2);border:1px solid var(--ui-line);border-radius:var(--radius);
+    margin-bottom:10px;
+  }
+  .article summary{
+    cursor:pointer;padding:13px 16px;font-size:14.5px;font-weight:600;color:var(--ui-text);
+    list-style:none;user-select:none;
+  }
+  .article summary::-webkit-details-marker{display:none;}
+  .article summary::before{content:'▸ ';color:var(--ui-accent);}
+  .article[open] summary::before{content:'▾ ';}
+  .article-content{padding:0 16px 18px;color:var(--ui-text-dim);font-size:14px;line-height:1.65;}
+  .article-content h3{color:var(--ui-text);font-size:13px;margin:14px 0 4px;font-family:'Manrope',sans-serif;}
+  .article-content p{margin:0 0 8px;}
+
+  /* ---------- footer ---------- */
+  footer.app-footer{
+    border-top:1px solid var(--ui-line);background:var(--ui-bg-1);padding:26px 0 46px;
+  }
+  footer.app-footer .wrap{display:flex;flex-direction:column;gap:14px;}
+  footer.app-footer p{font-size:12.5px;color:var(--ui-text-dim);max-width:60ch;margin:0;}
+  .footer-links{display:flex;flex-wrap:wrap;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+  .footer-links a{color:var(--ui-accent);text-decoration:none;}
+  .footer-links a:hover{text-decoration:underline;}
+
+  /* ---------- promo modal ---------- */
+  .promo-overlay{
+    position:fixed;inset:0;background:rgba(11,12,16,.72);display:flex;align-items:center;
+    justify-content:center;padding:20px;z-index:100;
+  }
+  .promo-overlay[hidden]{display:none;}
+  .promo-card{
+    background:var(--ui-bg-2);border:1px solid var(--ui-line);border-radius:var(--radius);
+    max-width:380px;width:100%;padding:24px 22px 22px;position:relative;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,.6);
+    animation:promo-in .18s ease;
+  }
+  @keyframes promo-in{from{opacity:0;transform:translateY(6px) scale(.98);}to{opacity:1;transform:none;}}
+  .promo-close{
+    position:absolute;top:10px;right:10px;background:none;border:none;color:var(--ui-text-dim);
+    font-size:15px;cursor:pointer;padding:7px;line-height:1;border-radius:6px;
+  }
+  .promo-close:hover{color:var(--ui-text);background:rgba(15,23,42,.06);}
+  .promo-card h3{font-family:'Manrope',sans-serif;font-size:19px;margin:0 0 10px;padding-right:22px;}
+  .promo-card p{font-size:14px;color:var(--ui-text-dim);margin:0 0 16px;line-height:1.6;}
+  .promo-card p strong{color:var(--ui-text);}
+  .promo-actions{display:flex;flex-wrap:wrap;gap:10px;}
+  .promo-cta{
+    background:var(--ui-accent);color:#fff;text-decoration:none;font-family:'Inter',sans-serif;
+    font-weight:600;font-size:14px;padding:11px 18px;border-radius:8px;display:inline-flex;
+    align-items:center;gap:6px;
+  }
+  .promo-cta:hover{background:#0e7490;}
+  .promo-dismiss{
+    background:transparent;border:1px solid var(--ui-line);color:var(--ui-text-dim);
+    font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:11px 16px;border-radius:8px;
+    cursor:pointer;
+  }
+  .promo-dismiss:hover{border-color:var(--ui-accent);color:var(--ui-accent);}
+
+  .promo-support{
+    background:transparent;border:1px solid rgba(217,119,6,.4);color:var(--warn);
+    font-family:'Inter',sans-serif;font-weight:600;font-size:14px;padding:11px 16px;border-radius:8px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+  }
+  .promo-support:hover{background:rgba(217,119,6,.12);}
+
+  .promo-unlock{margin-top:18px;padding-top:16px;border-top:1px solid var(--ui-line);}
+  .promo-unlock-label{display:block;font-size:12px;color:var(--ui-text-dim);margin:0 0 8px;}
+  .promo-unlock-row{display:flex;gap:8px;}
+  .promo-unlock-input{
+    flex:1;min-width:0;background:var(--ui-bg-1);border:1px solid var(--ui-line);border-radius:8px;
+    color:var(--ui-text);padding:9px 10px;font-family:'IBM Plex Mono',monospace;font-size:13px;
+  }
+  .promo-unlock-btn{
+    flex:none;background:var(--ui-bg-1);border:1px solid var(--ui-line);border-radius:8px;color:var(--ui-text);
+    font-family:'Inter',sans-serif;font-weight:600;font-size:13px;padding:9px 14px;cursor:pointer;
+  }
+  .promo-unlock-btn:hover{border-color:var(--ui-accent);color:var(--ui-accent);}
+  .promo-unlock-hint{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ui-text-dim);margin:10px 0 0;}
+  .promo-unlock-code{color:var(--ui-accent);background:rgba(8,145,178,.14);padding:1px 7px;border-radius:4px;font-weight:600;}
+  .promo-unlock-msg{font-family:'IBM Plex Mono',monospace;font-size:12px;margin:9px 0 0;}
+  .promo-unlock-msg.ok{color:var(--pass);}
+  .promo-unlock-msg.bad{color:var(--fail);}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+  }
+
+  /* ---------- tisk / export do PDF (přes dialog tisku prohlížeče) ---------- */
+  @media print{
+    body{background:#fff;color:#111;}
+    .topbar,.hero,.articles-wrap,footer.app-footer,.promo-overlay,.install-banner,#reset-btn,.export-pdf-btn{
+      display:none !important;
+    }
+    #results{display:block !important;border-top:none;padding:0;margin-top:0;}
+    .analyzed-for{color:#111;}
+    .summary,.category-head,.check-row,.quick-wins li{border-color:#ccc;}
+    .summary-text h2,.check-body p.label,.category-head h3{color:#111;}
+    .summary-text p,.category-score,.check-body p.detail,.quick-wins h3{color:#444;}
+    .gauge-track{stroke:#ddd;}
+    .gauge-fill.pass{stroke:#2f8a5f;}
+    .gauge-fill.warn{stroke:#a97313;}
+    .gauge-fill.fail{stroke:#b23b34;}
+    .check-icon.pass{background:#2f8a5f;}
+    .check-icon.warn{background:#a97313;color:#111;}
+    .check-icon.fail{background:#b23b34;color:#fff;}
+    .quick-wins li{background:#f6f6f6;}
+    .quick-wins li strong{color:#111;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="#top" class="topbar-brand">
+    <img src="./seochecker-icon-192.png" alt="" width="24" height="24">
+    <span>SEOVIP</span>
+  </a>
+  <span class="topbar-sub">Free SEO check for your website</span>
+  <div class="topbar-spacer"></div>
+  <div class="topbar-actions">
+    <a class="save-btn" href="../" title="Czech version">🌐 <span>CZ</span></a>
+    <a class="save-btn" href="#articles" title="Articles">📚 <span>Articles</span></a>
+  </div>
+</div>
+
+<div class="install-banner" id="privacy-banner" hidden>
+  <div class="wrap install-banner-inner">
+    <div class="install-banner-text">
+      <strong>🔒 Privacy</strong>
+      <span>Your check history is stored only in your browser (localStorage) and never sent anywhere. When you check a URL, your IP address is temporarily stored (abuse protection) and the result is published as a public page. More in the <a href="privacy.html">privacy policy</a>.</span>
+    </div>
+    <div class="install-banner-actions">
+      <button type="button" class="install-banner-btn" id="privacy-banner-ok">Got it</button>
+    </div>
+  </div>
+</div>
+
+<div class="install-banner" id="install-banner" hidden>
+  <div class="wrap install-banner-inner">
+    <div class="install-banner-text">
+      <strong>📲 Install SEOCHECKER</strong>
+      <span id="install-banner-desc">Add it to your home screen for quick access, no app store needed.</span>
+    </div>
+    <div class="install-banner-actions">
+      <button type="button" class="install-banner-btn" id="install-banner-btn" hidden>Install</button>
+      <button type="button" class="install-banner-dismiss" id="install-banner-dismiss" aria-label="Close">✕</button>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero-kicker">SEOVIP</p>
+      <h1>SEO<span class="accent">CHECKER</span></h1>
+      <p class="hero-tagline">See how search engines view your website.</p>
+      <p>Enter your website address and get an overview of key SEO signals within moments — meta tags, mobile view, content, social sharing and indexability. Free, no registration.</p>
+
+      <form id="url-check-form">
+        <div class="input-col">
+          <label class="field-label" for="site-url-input">Website address</label>
+          <input id="site-url-input" class="site-url-input" type="text" inputmode="url" autocomplete="url" placeholder="e.g. example.com" required>
+        </div>
+        <button id="url-submit-btn" type="submit">
+          <span>Check</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+      <div id="url-status-region" role="status" aria-live="polite"></div>
+
+      <div class="license-gate" id="license-gate" hidden>
+        <p class="field-label">The result is unlocked with a code from Gumroad</p>
+        <p class="license-gate-text">You’ll get the code by email right after purchase. <a id="license-buy-link" href="" target="_blank" rel="noopener">Buy the code on Gumroad →</a></p>
+        <form id="license-form">
+          <div class="input-col">
+            <label class="field-label" for="license-key-input">Code from Gumroad</label>
+            <input id="license-key-input" class="site-url-input" type="text" autocomplete="off" placeholder="e.g. XXXX-XXXX-XXXX-XXXX" required>
+          </div>
+          <button id="license-submit-btn" type="submit"><span>Unlock</span></button>
+        </form>
+        <div id="license-status-region" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="permalink-box" id="permalink-box" hidden>
+        <span class="field-label">Permanent link to this result</span>
+        <div class="permalink-row">
+          <input type="text" id="permalink-input" class="permalink-input" readonly>
+          <button type="button" id="permalink-copy-btn" class="choose-files-btn">Copy</button>
+        </div>
+      </div>
+
+      <details class="file-mode-details">
+        <summary>Or check an exported HTML file manually (offline, nothing is sent anywhere)</summary>
+        <form id="url-form">
+          <div class="input-col">
+            <label class="field-label" for="file-input">Any HTML file from your website (.html)</label>
+            <button type="button" id="choose-files-btn" class="choose-files-btn">📁 Choose HTML file(s)</button>
+            <input id="file-input" type="file" accept=".html,.htm,.txt" multiple hidden>
+            <div id="selected-files" class="selected-files" hidden></div>
+          </div>
+          <button id="submit-btn" type="submit" disabled>
+            <span id="submit-label">Check file</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+        <p class="file-hint">Tip: if you select multiple files at once (a full export of your site), SEOCHECKER will also verify internal links between pages. This mode is purely local — nothing is sent anywhere or published.</p>
+        <div id="status-region" role="status" aria-live="polite"></div>
+      </details>
+
+      <div class="history-wrap" id="history-wrap" hidden>
+        <div class="history-head">
+          <h3>Check history</h3>
+          <button type="button" class="history-clear" id="history-clear">Clear history</button>
+        </div>
+        <div class="history-list" id="history-list"></div>
+        <p class="history-note">History stays only in your browser — it’s never sent anywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section id="results" aria-live="polite">
+      <p class="analyzed-for" id="analyzed-for"></p>
+
+      <div class="summary">
+        <div class="gauge-holder">
+          <svg viewBox="0 0 120 120">
+            <circle class="gauge-track" cx="60" cy="60" r="52"/>
+            <circle class="gauge-fill" id="gauge-fill" cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="gauge-number"><b id="score-number">0</b><small>/ 100</small></div>
+        </div>
+        <div class="summary-text">
+          <h2 id="verdict-title">Summary</h2>
+          <p id="verdict-text"></p>
+        </div>
+      </div>
+
+      <div class="quick-wins" id="quick-wins-wrap" hidden>
+        <h3>What to focus on first</h3>
+        <ul id="quick-wins-list"></ul>
+      </div>
+
+      <div id="categories-container"></div>
+
+      <div class="results-actions">
+        <button class="reset-link" id="reset-btn" type="button">Check another page</button>
+        <button class="export-pdf-btn" id="export-pdf-btn" type="button">📄 Export to PDF</button>
+      </div>
+    </section>
+  </div>
+
+  <section class="articles-wrap" id="articles">
+    <div class="wrap">
+      <h2>Articles about SEO</h2>
+      <p class="lead">A quick overview of what SEOCHECKER actually checks and why it matters.</p>
+
+      <details class="article">
+        <summary>What is SEO and why does it matter</summary>
+        <div class="article-content">
+          <p>SEO (search engine optimization) is a set of steps that make a website easier for Google and other search engines to understand, so they can properly index it and show it to people searching for what you offer. It’s not a trick or a one-off fix — it’s ongoing care for a site’s technical foundation, content and structure.</p>
+          <p>A site with good SEO usually loads quickly, works on mobile, has clearly named pages, and content that genuinely matches what people are searching for. A site without SEO basics can be beautiful and useful, yet search engines might not know it exists at all.</p>
+          <h3>Summary</h3>
+          <p>SEO doesn’t decide how a site looks — it decides whether anyone finds it at all.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Title tag: the most important line a user will see</summary>
+        <div class="article-content">
+          <p>The title tag is the page’s name, shown as the clickable heading in search results and as the browser tab’s title. It’s the first thing people notice in the results, and search engines treat it as a strong signal of what the page is about.</p>
+          <p>The ideal length is roughly 30–65 characters — shorter wastes the available space, longer gets cut off in results. A good title contains the page’s main topic and is unique for every page on the site.</p>
+          <h3>Summary</h3>
+          <p>Every page should have its own, descriptive title — it’s the business card seen by both people and algorithms.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Meta description: the text that decides the click</summary>
+        <div class="article-content">
+          <p>The meta description is a short text shown under the title tag in search results. Google increasingly replaces it with its own snippet from the page, but if you write a good description that matches the content, the odds improve that it will be shown — and, more importantly, that people will read it and click.</p>
+          <p>The ideal length is 70–160 characters. It works best when it clearly summarizes the page’s value, rather than reading like a list of keywords.</p>
+          <h3>Summary</h3>
+          <p>The meta description doesn’t directly affect ranking, but it strongly affects how many people click through.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>H1–H6 heading structure: why order matters</summary>
+        <div class="article-content">
+          <p>Headings H1 through H6 create a hierarchy on the page, similar to an outline in a document. There should be only one H1, summarizing the page’s main topic, while further headings (H2, H3…) break the content into logical sections.</p>
+          <p>Both search engines and screen readers rely on heading structure to understand what’s the main topic and what are subtopics. A page with no headings, or a chaotic structure, is harder to read for both.</p>
+          <h3>Summary</h3>
+          <p>Well-structured headings help search engines understand content faster and help people navigate the page more easily.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Mobile view: why the viewport tag can’t be missing</summary>
+        <div class="article-content">
+          <p>Most visits to a website today come from mobile, and Google has long evaluated primarily the mobile version of a page (so-called mobile-first indexing). The viewport meta tag tells the browser how to render the page on a small screen — without it, the display can shrink to the point of being unreadable.</p>
+          <p>Besides the viewport, it’s worth checking font size, spacing between tappable buttons, and whether content overflows the screen.</p>
+          <h3>Summary</h3>
+          <p>If a page doesn’t work well on mobile, it will show up in search results regardless of how good the content is.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>HTTPS: security that’s also an SEO signal</summary>
+        <div class="article-content">
+          <p>HTTPS encrypts the communication between browser and server, so no one along the way can intercept or alter the data. Besides security, it’s also one of the signals Google takes into account when evaluating a site, and browsers actively flag sites without HTTPS as “not secure”.</p>
+          <p>Practically every host today offers HTTPS for free (for example via Let’s Encrypt), so there’s no reason to skip it.</p>
+          <h3>Summary</h3>
+          <p>HTTPS is standard today, not a bonus — its absence breeds distrust with both people and search engines.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Image alt text: accessibility and SEO at once</summary>
+        <div class="article-content">
+          <p>The alt attribute describes an image’s content in text — screen readers use it for blind users, it shows up when an image fails to load, and search engines read it too, since they can’t see the image content itself.</p>
+          <p>A good alt text is short and descriptive, not stuffed with keywords. Purely decorative images can have an empty but present alt="" attribute, telling screen readers to skip the image.</p>
+          <h3>Summary</h3>
+          <p>Alt text isn’t just an SEO detail — it’s real help for people who can’t see the image.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Open Graph: how your link will look on social media</summary>
+        <div class="article-content">
+          <p>Open Graph tags (og:title, og:description, og:image) determine how a page’s preview looks when shared on Facebook, LinkedIn or elsewhere. Without them, the network has to guess the preview itself, which often ends up picking a random image or not showing a card at all.</p>
+          <p>A filled-in, visually clear preview increases the odds that people notice it in their feed and click through.</p>
+          <h3>Summary</h3>
+          <p>Open Graph doesn’t affect search ranking, but it directly affects how well your content spreads on social media.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Structured data: how to get rich results</summary>
+        <div class="article-content">
+          <p>Structured data is code (most often in JSON-LD format) that tells search engines exactly what a page contains — a star-rated review, a recipe, questions and answers, business information, and so on.</p>
+          <p>Thanks to it, an enhanced, visually richer result (a so-called rich snippet) can appear in search, drawing more attention than a plain blue link. It’s not a guarantee of a better ranking, but it does increase visibility.</p>
+          <h3>Summary</h3>
+          <p>Structured data helps search engines understand a page’s content precisely, not just by guessing from the text.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>robots.txt and sitemap.xml: how search engines find you</summary>
+        <div class="article-content">
+          <p>The robots.txt file tells search engines which parts of a site they may crawl and which they may not. Sitemap.xml, on the other hand, works as a map of the site — a list of all the important URLs you want search engines to know about and index.</p>
+          <p>Both files are usually placed at the domain root, and robots.txt can also link directly to the sitemap. Without them, search engines will still find the site, just more slowly and less thoroughly.</p>
+          <h3>Summary</h3>
+          <p>They’re not mandatory, but they make it significantly easier for search engines to navigate your site.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Internal linking: why links within a site help</summary>
+        <div class="article-content">
+          <p>Internal links are links leading from one page on your site to another page on the same site. They help people find related content, while also showing search engines which pages are important and how they relate to each other.</p>
+          <p>A page with no links pointing to it from the rest of the site is harder to discover and harder to trust. A simple rule: whenever you mention a topic you’ve covered in detail elsewhere, link to it.</p>
+          <h3>Summary</h3>
+          <p>The more thoughtfully a site’s pages are linked together, the easier it is for both people and search engines to navigate.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>How long until SEO changes show results?</summary>
+        <div class="article-content">
+          <p>SEO isn’t instant. Small technical fixes (title, meta description, alt texts) can show up in results within days to weeks, once the search engine recrawls and re-evaluates the page.</p>
+          <p>Bigger changes — new content, building site trustworthiness, restructuring — often take weeks to months to show. The speed also depends on how often search engines visit the site.</p>
+          <h3>Summary</h3>
+          <p>SEO is a long game — the first results come gradually, not overnight.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <footer class="app-footer">
+    <div class="wrap">
+      <p>If you upload an HTML file instead of a website address, the check runs purely locally in your browser and is never sent anywhere.</p>
+      <p>For convenience, the app stores a short history of recent checks (address/file name and score) — purely locally in your browser (localStorage). It’s never sent anywhere, no one else can see it, and you can delete it at any time with the “Clear history” button.</p>
+      <p>The check only evaluates the uploaded HTML file as it is — it doesn’t replace an audit by an SEO specialist, nor does it measure search rankings.</p>
+      <div class="footer-links">
+        <a href="privacy.html">🔒 Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<div class="promo-overlay" id="promo-overlay" hidden>
+  <div class="promo-card" role="dialog" aria-modal="true" aria-labelledby="promo-title">
+    <button type="button" class="promo-close" id="promo-close" aria-label="Close">✕</button>
+    <h3 id="promo-title">Thanks for using SEOCHECKER</h3>
+    <p>Sorry for the interruption — just a quick offer before you go. If you’d like a break from SEO, check out <strong>Relax Player</strong>: ambient music and sounds for focus or sleep, free right in your browser.</p>
+    <div class="promo-actions">
+      <a class="promo-cta" href="https://relaxplayer.eu" target="_blank" rel="noopener">🎧 Try Relax Player</a>
+      <a class="promo-support" href="https://uklidnito.gumroad.com/coffee" target="_blank" rel="noopener noreferrer">☕ Support the project</a>
+      <button type="button" class="promo-dismiss" id="promo-dismiss">Close</button>
+    </div>
+    <form class="promo-unlock" id="promo-unlock-form">
+      <label class="promo-unlock-label" for="promo-unlock-input">Have a password? Enter it and this window won’t show for 60 minutes:</label>
+      <div class="promo-unlock-row">
+        <input type="password" id="promo-unlock-input" class="promo-unlock-input" placeholder="Password" autocomplete="off">
+        <button type="submit" class="promo-unlock-btn">Confirm</button>
+      </div>
+      <p class="promo-unlock-hint">Password: <strong class="promo-unlock-code">Seo2026</strong></p>
+      <p class="promo-unlock-msg" id="promo-unlock-msg" hidden></p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var T = {
+    loadingMessages: ["Loading file…","Scanning code…","Preparing report…"],
+    loadingMessagesUrl: ["Fetching page…","Scanning code…","Checking robots.txt and sitemap…","Preparing report…"],
+    errorNoFiles: "Please select at least one HTML file first.",
+    errorReadFailed: "The selected file could not be read, or it isn’t a valid HTML file. Try exporting the page again.",
+    errorNoUrl: "Enter a website address, e.g. example.com",
+    errorDetailsLabel: "Technical detail",
+    analyzedFor: "Result for file ",
+    analyzedForUrl: "Result for website ",
+    historyNoDetail: "Detailed results for this entry aren’t available (it was saved before this feature was added) — run the check again.",
+    verdicts: {
+      great: "Excellent. Search engines shouldn’t have any trouble with this page.",
+      good: "A solid foundation, but a few things are worth fine-tuning.",
+      weak: "Search engines are having trouble with this page — check the recommendations below.",
+      poor: "Serious issues that are likely holding back the page’s visibility in search."
+    },
+    categories: {
+      meta: "Basic meta data",
+      mobile: "Mobile & technical parameters",
+      content: "Content & structure",
+      social: "Social sharing",
+      index: "Links & indexability"
+    }
+  };
+
+  function esc(str){
+    var d = document.createElement("div");
+    d.textContent = (str === undefined || str === null) ? "" : String(str);
+    return d.innerHTML;
+  }
+
+  function isHtmlFile(name){
+    return /\.html?$/i.test(name || "");
+  }
+
+  function readFileAsText(file){
+    return new Promise(function(resolve, reject){
+      var reader = new FileReader();
+      reader.onload = function(){ resolve(String(reader.result || "")); };
+      reader.onerror = function(){ reject(reader.error || new Error("file read error")); };
+      reader.readAsText(file, "UTF-8");
+    });
+  }
+
+  function wordCount(doc){
+    var clone = doc.body ? doc.body.cloneNode(true) : null;
+    if(!clone) return 0;
+    var kill = clone.querySelectorAll("script,style,noscript,template");
+    kill.forEach(function(el){ el.remove(); });
+    var text = clone.textContent || "";
+    var words = text.trim().split(/\s+/).filter(Boolean);
+    return words.length;
+  }
+
+  function addCheck(list, cat, id, status, points, maxPoints, label, detail){
+    list.push({cat:cat, id:id, status:status, points:points, maxPoints:maxPoints, label:label, detail:detail});
+  }
+
+  // Generic, meaningless link texts (Czech and English — the checked page
+  // can be in either language, independent of the app's own UI language).
+  var GENERIC_ANCHOR_TEXTS = ["zde","klikněte zde","klikni zde","více","více zde","čtěte více","tady","odkaz","click here","here","read more","learn more","more","link"];
+
+  function hasDoctype(rawHtml){
+    return /^\s*<!doctype\s+html\s*>/i.test(String(rawHtml || "").replace(/^﻿/, ""));
+  }
+
+  function runChecks(doc, context){
+    var list = [];
+    context = context || {};
+    var siblingFiles = context.siblingFiles || new Set();
+    var multiFile = siblingFiles.size > 1;
+
+    var titleEl = doc.querySelector("title");
+    var titleText = titleEl ? titleEl.textContent.replace(/\s+/g," ").trim() : "";
+    if(!titleText){
+      addCheck(list,"meta","title","fail",0,6,"Title tag","The page has no title tag.");
+    } else if(titleText.length < 30 || titleText.length > 65){
+      addCheck(list,"meta","title","warn",3,6,"Title tag","“" + titleText + "” (" + titleText.length + " characters — ideal is 30–65).");
+    } else {
+      addCheck(list,"meta","title","pass",6,6,"Title tag","“" + titleText + "” (" + titleText.length + " characters).");
+    }
+
+    var descEl = doc.querySelector('meta[name="description"]');
+    var descText = descEl ? (descEl.getAttribute("content") || "").trim() : "";
+    if(!descText){
+      addCheck(list,"meta","desc","fail",0,6,"Meta description","The page has no meta description.");
+    } else if(descText.length < 70 || descText.length > 160){
+      addCheck(list,"meta","desc","warn",3,6,"Meta description","“" + descText + "” (" + descText.length + " characters — ideal is 70–160).");
+    } else {
+      addCheck(list,"meta","desc","pass",6,6,"Meta description","“" + descText + "” (" + descText.length + " characters).");
+    }
+
+    var canonEl = doc.querySelector('link[rel="canonical"]');
+    var canonHref = canonEl ? (canonEl.getAttribute("href") || "").trim() : "";
+    if(canonHref){
+      addCheck(list,"meta","canonical","pass",4,4,"Canonical link","Set to " + canonHref);
+      if(/^https?:\/\//i.test(canonHref)){
+        if(/^https:\/\//i.test(canonHref)){
+          addCheck(list,"meta","canonicalhttps","pass",3,3,"Canonical URL & HTTPS","The canonical URL points to a secure (HTTPS) address.");
+        } else {
+          addCheck(list,"meta","canonicalhttps","warn",0,3,"Canonical URL & HTTPS","The canonical URL points to an insecure (HTTP) address — once published, make sure the final site runs on HTTPS.");
+        }
+      }
+    } else {
+      addCheck(list,"meta","canonical","fail",0,4,"Canonical link","Missing canonical link.");
+    }
+
+    var htmlLang = doc.documentElement.getAttribute("lang");
+    if(htmlLang){
+      addCheck(list,"meta","lang","pass",2,2,"Page language","Set (lang=\"" + htmlLang + "\").");
+    } else {
+      addCheck(list,"meta","lang","fail",0,2,"Page language","Missing lang attribute on <html>.");
+    }
+
+    var charsetEl = doc.querySelector("meta[charset]") || doc.querySelector('meta[http-equiv="Content-Type"]');
+    if(charsetEl){
+      addCheck(list,"meta","charset","pass",2,2,"Page encoding","Encoding declaration is present.");
+    } else {
+      addCheck(list,"meta","charset","fail",0,2,"Page encoding","Missing encoding declaration (meta charset).");
+    }
+
+    if(context.rawHtml){
+      if(hasDoctype(context.rawHtml)){
+        addCheck(list,"meta","doctype","pass",2,2,"DOCTYPE declaration","The page has a standard <!DOCTYPE html>.");
+      } else {
+        addCheck(list,"meta","doctype","warn",0,2,"DOCTYPE declaration","Missing (or non-standard) <!DOCTYPE html> — the browser may render the page in so-called quirks mode.");
+      }
+    }
+
+    if(titleText && descText && titleText.trim().toLowerCase() === descText.trim().toLowerCase()){
+      addCheck(list,"meta","desctitledup","warn",0,2,"Title vs. meta description","The title tag and meta description are identical — each should offer different information.");
+    } else {
+      addCheck(list,"meta","desctitledup","pass",2,2,"Title vs. meta description","The title tag and meta description don't match (as they should).");
+    }
+
+    var viewportEl = doc.querySelector('meta[name="viewport"]');
+    if(viewportEl){
+      addCheck(list,"mobile","viewport","pass",8,8,"Mobile view (viewport)","Meta viewport is set.");
+    } else {
+      addCheck(list,"mobile","viewport","fail",0,8,"Mobile view (viewport)","Missing meta viewport — the page may not display correctly on mobile.");
+    }
+
+    var faviconEl = doc.querySelector('link[rel~="icon"]');
+    if(faviconEl){
+      addCheck(list,"mobile","favicon","pass",2,2,"Favicon","Favicon is set.");
+    } else {
+      addCheck(list,"mobile","favicon","warn",0,2,"Favicon","Couldn’t find a favicon.");
+    }
+
+    var blankLinks = doc.querySelectorAll('a[target="_blank"]');
+    if(blankLinks.length === 0){
+      addCheck(list,"mobile","relnoopener","pass",2,2,"Links opened in a new tab","The page doesn't use any target=\"_blank\" links.");
+    } else {
+      var missingNoopener = 0;
+      blankLinks.forEach(function(a){
+        var rel = (a.getAttribute("rel") || "").toLowerCase();
+        if(rel.indexOf("noopener") === -1 && rel.indexOf("noreferrer") === -1) missingNoopener++;
+      });
+      if(missingNoopener === 0){
+        addCheck(list,"mobile","relnoopener","pass",2,2,"Links opened in a new tab","All target=\"_blank\" links have rel=\"noopener\".");
+      } else {
+        addCheck(list,"mobile","relnoopener","warn",0,2,"Links opened in a new tab", missingNoopener + " of " + blankLinks.length + " target=\"_blank\" links are missing rel=\"noopener\" (a security and performance risk).");
+      }
+    }
+
+    var h1s = doc.querySelectorAll("h1");
+    if(h1s.length === 0){
+      addCheck(list,"content","h1","fail",0,8,"H1 heading","The page has no H1 heading.");
+    } else if(h1s.length > 1){
+      addCheck(list,"content","h1","warn",4,8,"H1 heading","The page has " + h1s.length + " H1 headings — ideally there should be only one.");
+    } else {
+      var h1text = h1s[0].textContent.replace(/\s+/g," ").trim();
+      addCheck(list,"content","h1","pass",8,8,"H1 heading","“" + h1text + "”");
+    }
+
+    var otherHeadings = doc.querySelectorAll("h2,h3,h4,h5,h6");
+    if(otherHeadings.length > 0){
+      addCheck(list,"content","headings","pass",5,5,"Heading structure","The page uses additional heading levels (H2 and below).");
+    } else {
+      addCheck(list,"content","headings","warn",0,5,"Heading structure","Apart from H1, the page doesn’t use any other headings.");
+    }
+
+    var wc = wordCount(doc);
+    if(wc >= 300){
+      addCheck(list,"content","words","pass",7,7,"Amount of text","The page contains approximately " + wc + " words of text.");
+    } else if(wc >= 150){
+      addCheck(list,"content","words","warn",4,7,"Amount of text","The page contains only about " + wc + " words of text.");
+    } else {
+      addCheck(list,"content","words","fail",0,7,"Amount of text","The page contains only about " + wc + " words of text — that’s very little.");
+    }
+
+    var imgs = doc.querySelectorAll("img");
+    if(imgs.length === 0){
+      addCheck(list,"content","alt","pass",5,5,"Image alt text","The page doesn’t contain any images.");
+    } else {
+      var missing = 0;
+      imgs.forEach(function(img){ if(!img.hasAttribute("alt")) missing++; });
+      var covered = imgs.length - missing;
+      var ratio = covered / imgs.length;
+      var pts = Math.round(5 * ratio);
+      if(missing === 0){
+        addCheck(list,"content","alt","pass",5,5,"Image alt text","All " + imgs.length + " images have an alt attribute.");
+      } else if(ratio >= 0.5){
+        addCheck(list,"content","alt","warn",pts,5,"Image alt text", missing + " out of " + imgs.length + " images are missing an alt attribute.");
+      } else {
+        addCheck(list,"content","alt","fail",pts,5,"Image alt text", missing + " out of " + imgs.length + " images are missing an alt attribute.");
+      }
+    }
+
+    if(imgs.length === 0){
+      addCheck(list,"content","imgdims","pass",4,4,"Image dimensions (width/height)","The page doesn't contain any images.");
+    } else {
+      var missingDims = 0;
+      imgs.forEach(function(img){ if(!img.hasAttribute("width") || !img.hasAttribute("height")) missingDims++; });
+      var coveredDims = imgs.length - missingDims;
+      var ratioDims = coveredDims / imgs.length;
+      var ptsDims = Math.round(4 * ratioDims);
+      if(missingDims === 0){
+        addCheck(list,"content","imgdims","pass",4,4,"Image dimensions (width/height)","All " + imgs.length + " images have explicit dimensions — this helps prevent layout shift while loading (CLS).");
+      } else if(ratioDims >= 0.5){
+        addCheck(list,"content","imgdims","warn",ptsDims,4,"Image dimensions (width/height)", missingDims + " out of " + imgs.length + " images are missing a width/height.");
+      } else {
+        addCheck(list,"content","imgdims","fail",ptsDims,4,"Image dimensions (width/height)", missingDims + " out of " + imgs.length + " images are missing a width/height.");
+      }
+    }
+
+    var textLinks = Array.prototype.filter.call(doc.querySelectorAll("a[href]"), function(a){
+      var href = (a.getAttribute("href") || "").trim();
+      return !!href && href.charAt(0) !== "#" && !/^(mailto:|tel:|javascript:)/i.test(href) && !!(a.textContent || "").trim();
+    });
+    if(textLinks.length === 0){
+      addCheck(list,"content","anchortext","pass",3,3,"Link text","The page has no text links to evaluate.");
+    } else {
+      var badAnchors = 0;
+      textLinks.forEach(function(a){
+        var t = (a.textContent || "").replace(/\s+/g," ").trim().toLowerCase().replace(/[.,!?›»→\s]+$/g,"");
+        if(GENERIC_ANCHOR_TEXTS.indexOf(t) !== -1) badAnchors++;
+      });
+      var anchorRatio = badAnchors / textLinks.length;
+      var anchorPts = Math.round(3 * (1 - anchorRatio));
+      if(badAnchors === 0){
+        addCheck(list,"content","anchortext","pass",3,3,"Link text","Links don't use generic text like “here” or “click here”.");
+      } else if(anchorRatio < 0.3){
+        addCheck(list,"content","anchortext","warn",anchorPts,3,"Link text", badAnchors + " out of " + textLinks.length + " links use generic, meaningless text (e.g. “here”, “click here”).");
+      } else {
+        addCheck(list,"content","anchortext","fail",anchorPts,3,"Link text", badAnchors + " out of " + textLinks.length + " links use generic, meaningless text (e.g. “here”, “click here”).");
+      }
+    }
+
+    var ogTitle = doc.querySelector('meta[property="og:title"]');
+    var ogDesc = doc.querySelector('meta[property="og:description"]');
+    var ogImg = doc.querySelector('meta[property="og:image"]');
+    var ogCount = [ogTitle,ogDesc,ogImg].filter(Boolean).length;
+    if(ogCount === 3){
+      addCheck(list,"social","og","pass",7,7,"Open Graph data","Title, description and image are all set.");
+    } else if(ogCount > 0){
+      var missingOg = [];
+      if(!ogTitle) missingOg.push("og:title");
+      if(!ogDesc) missingOg.push("og:description");
+      if(!ogImg) missingOg.push("og:image");
+      addCheck(list,"social","og","warn",Math.round(7*ogCount/3),7,"Open Graph data","Missing: " + missingOg.join(", ") + ".");
+    } else {
+      addCheck(list,"social","og","fail",0,7,"Open Graph data","The page has no Open Graph data.");
+    }
+
+    var twitterCard = doc.querySelector('meta[name="twitter:card"]');
+    if(twitterCard){
+      addCheck(list,"social","twitter","pass",3,3,"Twitter/X card","Set.");
+    } else {
+      addCheck(list,"social","twitter","warn",0,3,"Twitter/X card","Missing twitter:card.");
+    }
+
+    var ogTypeEl = doc.querySelector('meta[property="og:type"]');
+    if(ogTypeEl){
+      addCheck(list,"social","ogtype","pass",2,2,"Content type (og:type)","Set.");
+    } else {
+      addCheck(list,"social","ogtype","warn",0,2,"Content type (og:type)","Missing og:type (e.g. “website” or “article”).");
+    }
+
+    var jsonLd = doc.querySelectorAll('script[type="application/ld+json"]');
+    if(jsonLd.length > 0){
+      addCheck(list,"social","structured","pass",5,5,"Structured data","The page contains JSON-LD.");
+
+      var validLd = 0;
+      jsonLd.forEach(function(script){
+        try{ JSON.parse(script.textContent || ""); validLd++; }catch(e){ /* invalid JSON — don't count */ }
+      });
+      var ldPts = Math.round(5 * validLd / jsonLd.length);
+      if(validLd === jsonLd.length){
+        addCheck(list,"social","structuredvalid","pass",5,5,"Structured data validity","All " + jsonLd.length + " JSON-LD block(s) are syntactically valid.");
+      } else {
+        addCheck(list,"social","structuredvalid","fail",ldPts,5,"Structured data validity", (jsonLd.length - validLd) + " out of " + jsonLd.length + " JSON-LD block(s) contain invalid JSON — search engines likely ignore them.");
+      }
+    } else {
+      addCheck(list,"social","structured","warn",0,5,"Structured data","We didn’t find any structured data (JSON-LD).");
+    }
+
+    var ldTextAll = Array.prototype.map.call(jsonLd, function(s){ return s.textContent || ""; }).join(" ");
+    var hasBreadcrumbs = /breadcrumblist/i.test(ldTextAll) ||
+      !!doc.querySelector('[itemtype*="BreadcrumbList" i]') ||
+      !!doc.querySelector('nav[aria-label*="breadcrumb" i]') ||
+      !!doc.querySelector('.breadcrumb, .breadcrumbs');
+    if(hasBreadcrumbs){
+      addCheck(list,"social","breadcrumbs","pass",3,3,"Breadcrumb navigation","Found (schema.org BreadcrumbList or a navigation element).");
+    } else {
+      addCheck(list,"social","breadcrumbs","warn",0,3,"Breadcrumb navigation","We didn't find breadcrumb navigation or a schema.org BreadcrumbList.");
+    }
+
+    var robotsMeta = doc.querySelector('meta[name="robots"]');
+    var robotsContent = robotsMeta ? (robotsMeta.getAttribute("content") || "").toLowerCase() : "";
+    if(robotsContent.indexOf("noindex") !== -1){
+      addCheck(list,"index","robotsmeta","fail",0,8,"Meta robots","Contains “noindex” — search engines will likely not show this page.");
+    } else {
+      addCheck(list,"index","robotsmeta","pass",8,8,"Meta robots","Doesn’t restrict the page in any way.");
+    }
+
+    var links = doc.querySelectorAll("a[href]");
+    var internal = 0, brokenInternal = 0, brokenExamples = [];
+    links.forEach(function(a){
+      var href = (a.getAttribute("href") || "").trim();
+      if(!href) return;
+      if(href.charAt(0) === "#") return;
+      if(/^(mailto:|tel:|javascript:)/i.test(href)) return;
+      if(/^https?:\/\//i.test(href) || href.indexOf("//") === 0) return; // externí odkaz
+      internal++;
+      var clean = href.split("#")[0].split("?")[0];
+      if(clean && isHtmlFile(clean) && multiFile){
+        var base = clean.split("/").pop().toLowerCase();
+        if(base && !siblingFiles.has(base)){
+          brokenInternal++;
+          if(brokenExamples.length < 3) brokenExamples.push(clean);
+        }
+      }
+    });
+    if(internal >= 3){
+      addCheck(list,"index","internal","pass",6,6,"Internal links","The page contains " + internal + " links to other pages on the site.");
+    } else if(internal >= 1){
+      addCheck(list,"index","internal","warn",3,6,"Internal links","The page contains only " + internal + " link(s) to other pages on the site.");
+    } else {
+      addCheck(list,"index","internal","fail",0,6,"Internal links","The page doesn’t contain any links to other pages on the site.");
+    }
+
+    if(multiFile){
+      if(brokenInternal === 0){
+        addCheck(list,"index","brokenlinks","pass",4,4,"Links to uploaded files","All internal links to HTML pages point to files from your selection.");
+      } else {
+        addCheck(list,"index","brokenlinks","warn",0,4,"Links to uploaded files", brokenInternal + " link(s) point to file(s) that aren’t among the uploaded ones (" + brokenExamples.join(", ") + "). That’s fine if you didn’t upload the full site export — otherwise, check the links.");
+      }
+    }
+
+    return list;
+  }
+
+  function scoreFromChecks(list){
+    var total = 0;
+    list.forEach(function(c){ total += c.points; });
+    return total;
+  }
+
+  function maxScoreFromChecks(list){
+    var total = 0;
+    list.forEach(function(c){ total += c.maxPoints; });
+    return total;
+  }
+
+  function normalizedScoreFromChecks(list){
+    var max = maxScoreFromChecks(list);
+    if(max <= 0) return 0;
+    return Math.round(100 * scoreFromChecks(list) / max);
+  }
+
+  function verdictFor(score){
+    if(score >= 85) return T.verdicts.great;
+    if(score >= 65) return T.verdicts.good;
+    if(score >= 40) return T.verdicts.weak;
+    return T.verdicts.poor;
+  }
+
+  function statusIconChar(status){
+    if(status === "pass") return "✓";
+    if(status === "warn") return "!";
+    return "✕";
+  }
+
+  function renderReport(list, name, opts){
+    opts = opts || {};
+    var score = normalizedScoreFromChecks(list);
+
+    document.getElementById("analyzed-for").textContent = (opts.isUrl ? T.analyzedForUrl : T.analyzedFor) + name;
+    document.getElementById("score-number").textContent = String(score);
+
+    var permalinkBox = document.getElementById("permalink-box");
+    if(permalinkBox){
+      if(opts.reportUrl){
+        permalinkBox.hidden = false;
+        document.getElementById("permalink-input").value = opts.reportUrl;
+      } else {
+        permalinkBox.hidden = true;
+      }
+    }
+
+    var gaugeClass = score >= 80 ? "pass" : (score >= 50 ? "warn" : "fail");
+    var fill = document.getElementById("gauge-fill");
+    fill.setAttribute("class", "gauge-fill " + gaugeClass);
+    var circumference = 326.7;
+    var offset = circumference * (1 - score/100);
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        fill.style.strokeDashoffset = String(offset);
+      });
+    });
+
+    document.getElementById("verdict-text").textContent = verdictFor(score);
+
+    var issues = list.filter(function(c){ return c.status !== "pass"; });
+    issues.sort(function(a,b){ return (b.maxPoints-b.points) - (a.maxPoints-a.points); });
+    var top = issues.slice(0,3);
+    var wwrap = document.getElementById("quick-wins-wrap");
+    var wlist = document.getElementById("quick-wins-list");
+    wlist.innerHTML = "";
+    if(top.length){
+      wwrap.hidden = false;
+      top.forEach(function(c){
+        var li = document.createElement("li");
+        if(c.status === "fail") li.className = "crit";
+        li.innerHTML = "<strong>" + esc(c.label) + ":</strong>&nbsp;" + esc(c.detail);
+        wlist.appendChild(li);
+      });
+    } else {
+      wwrap.hidden = true;
+    }
+
+    var catOrder = ["meta","mobile","content","social","index"];
+    var container = document.getElementById("categories-container");
+    container.innerHTML = "";
+    catOrder.forEach(function(catKey){
+      var items = list.filter(function(c){ return c.cat === catKey; });
+      if(!items.length) return;
+      var catScore = 0, catMax = 0;
+      items.forEach(function(c){ catScore += c.points; catMax += c.maxPoints; });
+
+      var section = document.createElement("div");
+      section.className = "category";
+
+      var head = document.createElement("div");
+      head.className = "category-head";
+      head.innerHTML = "<h3>" + esc(T.categories[catKey]) + "</h3><span class=\"category-score\">" + catScore + " / " + catMax + "</span>";
+      section.appendChild(head);
+
+      items.forEach(function(c){
+        var row = document.createElement("div");
+        row.className = "check-row";
+        row.innerHTML =
+          "<span class=\"check-icon " + c.status + "\">" + statusIconChar(c.status) + "</span>" +
+          "<div class=\"check-body\"><p class=\"label\">" + esc(c.label) + "</p><p class=\"detail\">" + esc(c.detail) + "</p></div>";
+        section.appendChild(row);
+      });
+
+      container.appendChild(section);
+    });
+
+    var results = document.getElementById("results");
+    results.className = "visible";
+    results.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start"});
+  }
+
+  function setStatus(msg, state, details, targetId){
+    var el = document.getElementById(targetId || "status-region");
+    if(!el) return;
+    el.setAttribute("data-state", state || "");
+    el.innerHTML = "";
+    if(state === "loading"){
+      var s = document.createElement("span");
+      s.className = "spinner";
+      el.appendChild(s);
+    }
+    el.appendChild(document.createTextNode(msg || ""));
+    if(state === "error" && details && details.length){
+      var det = document.createElement("details");
+      det.className = "status-details";
+      var sum = document.createElement("summary");
+      sum.textContent = T.errorDetailsLabel;
+      det.appendChild(sum);
+      var pre = document.createElement("pre");
+      pre.textContent = details.join("\n");
+      det.appendChild(pre);
+      el.appendChild(det);
+    }
+  }
+
+  var loadingTimer = null;
+  function startLoadingMessages(messages, targetId){
+    messages = messages || T.loadingMessages;
+    var i = 0;
+    setStatus(messages[0], "loading", null, targetId);
+    loadingTimer = setInterval(function(){
+      i = (i+1) % messages.length;
+      setStatus(messages[i], "loading", null, targetId);
+    }, 2200);
+  }
+  function stopLoadingMessages(){
+    if(loadingTimer){ clearInterval(loadingTimer); loadingTimer = null; }
+  }
+
+  // ---------- history (stored locally in this browser only, never sent anywhere) ----------
+  var HISTORY_KEY = "seochecker_history_v1";
+  var HISTORY_MAX = 12;
+
+  function loadHistory(){
+    try{
+      var raw = window.localStorage.getItem(HISTORY_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr : [];
+    }catch(e){ return []; }
+  }
+
+  function saveHistoryList(list){
+    try{ window.localStorage.setItem(HISTORY_KEY, JSON.stringify(list)); }catch(e){ /* storage unavailable — fail silently */ }
+  }
+
+  function scoreTier(score){
+    return score >= 80 ? "pass" : (score >= 50 ? "warn" : "fail");
+  }
+
+  function renderHistory(){
+    var list = loadHistory();
+    var wrap = document.getElementById("history-wrap");
+    var listEl = document.getElementById("history-list");
+    listEl.innerHTML = "";
+    if(!list.length){ wrap.hidden = true; return; }
+    wrap.hidden = false;
+    list.forEach(function(item){
+      var row = document.createElement("div");
+      row.className = "history-row";
+
+      var entry = document.createElement("div");
+      entry.className = "history-item";
+      entry.setAttribute("role", "button");
+      entry.setAttribute("tabindex", "0");
+      entry.title = "Show this result";
+      entry.innerHTML =
+        "<span class=\"history-dot " + scoreTier(item.score) + "\"></span>" +
+        (item.mode === "url" ? "🔗 " : "") +
+        "<span class=\"history-host\">" + esc(item.name) + "</span>" +
+        "<span class=\"history-score\">" + item.score + "/100</span>";
+
+      function openEntry(){
+        if(item.checks && item.checks.length){
+          renderReport(item.checks, item.name, { isUrl: item.mode === "url", reportUrl: item.reportUrl });
+        } else {
+          setStatus(T.historyNoDetail, "error");
+        }
+      }
+      entry.addEventListener("click", openEntry);
+      entry.addEventListener("keydown", function(ev){
+        if(ev.key === "Enter" || ev.key === " "){
+          ev.preventDefault();
+          openEntry();
+        }
+      });
+
+      var rm = document.createElement("button");
+      rm.type = "button";
+      rm.className = "history-remove";
+      rm.setAttribute("aria-label", "Remove from history");
+      rm.textContent = "✕";
+      rm.addEventListener("click", function(ev){
+        ev.stopPropagation();
+        saveHistoryList(loadHistory().filter(function(h){ return h.ts !== item.ts; }));
+        renderHistory();
+      });
+
+      row.appendChild(entry);
+      row.appendChild(rm);
+      listEl.appendChild(row);
+    });
+  }
+
+  function addToHistory(name, score, checks, mode, reportUrl){
+    var list = loadHistory();
+    list.unshift({name:name, score:score, ts:Date.now(), checks:checks, mode:mode||"file", reportUrl:reportUrl||null});
+    if(list.length > HISTORY_MAX) list = list.slice(0, HISTORY_MAX);
+    saveHistoryList(list);
+    renderHistory();
+  }
+
+  var form = document.getElementById("url-form");
+  var chooseFilesBtn = document.getElementById("choose-files-btn");
+  var fileInput = document.getElementById("file-input");
+  var selectedFilesEl = document.getElementById("selected-files");
+  var submitBtn = document.getElementById("submit-btn");
+  var resetBtn = document.getElementById("reset-btn");
+  var exportPdfBtn = document.getElementById("export-pdf-btn");
+  var historyClearBtn = document.getElementById("history-clear");
+
+  var selectedFiles = []; // File[] chosen by the user
+  var chosenPageIndex = -1; // which one of selectedFiles (that is an .html file) to analyze
+
+  function renderSelectedFiles(){
+    selectedFilesEl.innerHTML = "";
+    if(!selectedFiles.length){
+      selectedFilesEl.hidden = true;
+      submitBtn.disabled = true;
+      return;
+    }
+    selectedFilesEl.hidden = false;
+    selectedFiles.forEach(function(file, idx){
+      var row = document.createElement("label");
+      var htmlPage = isHtmlFile(file.name);
+      row.className = "selected-file-row" + (htmlPage ? " is-page" : "");
+      var radioHtml = "";
+      if(htmlPage){
+        radioHtml = "<input type=\"radio\" name=\"page-choice\" value=\"" + idx + "\"" + (idx === chosenPageIndex ? " checked" : "") + ">";
+      } else {
+        radioHtml = "<span class=\"ftag\">file</span>";
+      }
+      row.innerHTML = radioHtml + "<span class=\"fname\">" + esc(file.name) + "</span>" + (htmlPage ? "" : "");
+      if(htmlPage){
+        row.addEventListener("click", function(){
+          chosenPageIndex = idx;
+          renderSelectedFiles();
+        });
+      }
+      selectedFilesEl.appendChild(row);
+    });
+    submitBtn.disabled = chosenPageIndex < 0;
+  }
+
+  function handleFileSelection(fileList){
+    var files = Array.prototype.slice.call(fileList || []);
+    if(!files.length) return;
+    selectedFiles = files;
+    var htmlIdx = -1;
+    for(var i=0;i<files.length;i++){
+      if(isHtmlFile(files[i].name) && /^index\.html?$/i.test(files[i].name)){ htmlIdx = i; break; }
+    }
+    if(htmlIdx < 0){
+      for(var j=0;j<files.length;j++){ if(isHtmlFile(files[j].name)){ htmlIdx = j; break; } }
+    }
+    chosenPageIndex = htmlIdx;
+    document.getElementById("results").className = "";
+    setStatus("", "");
+    renderSelectedFiles();
+  }
+
+  chooseFilesBtn.addEventListener("click", function(){ fileInput.click(); });
+  fileInput.addEventListener("change", function(){ handleFileSelection(fileInput.files); });
+
+  // ---------- tiny SHA-256 (public-domain, self-contained — no external library) ----------
+  // Použito jen pro porovnání hesla, aby nebylo v kódu uloženo jako čitelný text.
+  function sha256(ascii) {
+    function rightRotate(value, amount) {
+      return (value>>>amount) | (value<<(32 - amount));
+    }
+    var mathPow = Math.pow;
+    var maxWord = mathPow(2, 32);
+    var lengthProperty = 'length';
+    var i, j;
+    var result = '';
+    var words = [];
+    var asciiBitLength = ascii[lengthProperty]*8;
+    var hash = sha256.h = sha256.h || [];
+    var k = sha256.k = sha256.k || [];
+    var primeCounter = k[lengthProperty];
+    var isComposite = {};
+    for (var candidate = 2; primeCounter < 64; candidate++) {
+      if (!isComposite[candidate]) {
+        for (i = 0; i < 313; i += candidate) { isComposite[i] = candidate; }
+        hash[primeCounter] = (mathPow(candidate, .5)*maxWord)|0;
+        k[primeCounter++] = (mathPow(candidate, 1/3)*maxWord)|0;
+      }
+    }
+    ascii += '\x80';
+    while (ascii[lengthProperty]%64 - 56) ascii += '\x00';
+    for (i = 0; i < ascii[lengthProperty]; i++) {
+      j = ascii.charCodeAt(i);
+      if (j>>8) return '';
+      words[i>>2] |= j << ((3 - i)%4)*8;
+    }
+    words[words[lengthProperty]] = ((asciiBitLength/maxWord)|0);
+    words[words[lengthProperty]] = (asciiBitLength);
+    for (j = 0; j < words[lengthProperty];) {
+      var w = words.slice(j, j += 16);
+      var oldHash = hash;
+      hash = hash.slice(0, 8);
+      for (i = 0; i < 64; i++) {
+        var w15 = w[i - 15], w2 = w[i - 2];
+        var a = hash[0], e = hash[4];
+        var temp1 = hash[7]
+          + (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25))
+          + ((e&hash[5])^((~e)&hash[6]))
+          + k[i]
+          + (w[i] = (i < 16) ? w[i] : (
+              w[i - 16]
+              + (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15>>>3))
+              + w[i - 7]
+              + (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2>>>10))
+            )|0
+          );
+        var temp2 = (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22))
+          + ((a&hash[1])^(a&hash[2])^(hash[1]&hash[2]));
+        hash = [(temp1 + temp2)|0].concat(hash);
+        hash[4] = (hash[4] + temp1)|0;
+      }
+      for (i = 0; i < 8; i++) { hash[i] = (hash[i] + oldHash[i])|0; }
+    }
+    for (i = 0; i < 8; i++) {
+      for (j = 3; j + 1; j--) {
+        var b = (hash[i]>>(j*8))&255;
+        result += ((b < 16) ? 0 : '') + b.toString(16);
+      }
+    }
+    return result;
+  }
+
+  // ---------- promo modal (shown once, after the 2nd completed check) ----------
+  var PROMO_COUNT_KEY = "seochecker_check_count_v1";
+  var PROMO_SNOOZE_KEY = "seochecker_promo_snooze_until_v1";
+  var PROMO_SNOOZE_MS = 60 * 60 * 1000; // 60 minut
+  var PROMO_PASSWORD_HASH = "0dd05bf5d5e4f5c57bec4cb37b603b6bf18bff58a12a1f8b822d71ae2b1c94be"; // sha256("Seo2026")
+  var promoOverlay = document.getElementById("promo-overlay");
+  var promoClose = document.getElementById("promo-close");
+  var promoDismiss = document.getElementById("promo-dismiss");
+  var promoUnlockForm = document.getElementById("promo-unlock-form");
+  var promoUnlockInput = document.getElementById("promo-unlock-input");
+  var promoUnlockMsg = document.getElementById("promo-unlock-msg");
+  var promoLastFocused = null;
+
+  function getCheckCount(){
+    try{ return parseInt(window.localStorage.getItem(PROMO_COUNT_KEY) || "0", 10) || 0; }
+    catch(e){ return 0; }
+  }
+  function bumpCheckCount(){
+    try{
+      var n = getCheckCount() + 1;
+      window.localStorage.setItem(PROMO_COUNT_KEY, String(n));
+      return n;
+    }catch(e){ return 0; }
+  }
+  function isPromoSnoozed(){
+    try{
+      var until = parseInt(window.localStorage.getItem(PROMO_SNOOZE_KEY) || "0", 10);
+      return !!until && Date.now() < until;
+    }catch(e){ return false; }
+  }
+  function setPromoSnooze(){
+    try{ window.localStorage.setItem(PROMO_SNOOZE_KEY, String(Date.now() + PROMO_SNOOZE_MS)); }
+    catch(e){ /* úložiště nedostupné — tiše ignorovat */ }
+  }
+  function resetPromoUnlockUI(){
+    if(promoUnlockInput) promoUnlockInput.value = "";
+    if(promoUnlockMsg){
+      promoUnlockMsg.hidden = true;
+      promoUnlockMsg.textContent = "";
+      promoUnlockMsg.className = "promo-unlock-msg";
+    }
+  }
+  function onPromoKeydown(ev){
+    if(ev.key === "Escape") hidePromo();
+  }
+  function showPromo(){
+    promoLastFocused = document.activeElement;
+    resetPromoUnlockUI();
+    promoOverlay.hidden = false;
+    promoClose.focus();
+    document.addEventListener("keydown", onPromoKeydown);
+  }
+  function hidePromo(){
+    promoOverlay.hidden = true;
+    document.removeEventListener("keydown", onPromoKeydown);
+    if(promoLastFocused && typeof promoLastFocused.focus === "function") promoLastFocused.focus();
+  }
+  promoClose.addEventListener("click", hidePromo);
+  promoDismiss.addEventListener("click", hidePromo);
+  promoOverlay.addEventListener("click", function(ev){
+    if(ev.target === promoOverlay) hidePromo();
+  });
+  if(promoUnlockForm){
+    promoUnlockForm.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      var val = (promoUnlockInput.value || "").trim();
+      promoUnlockMsg.hidden = false;
+      if(val && sha256(val) === PROMO_PASSWORD_HASH){
+        setPromoSnooze();
+        promoUnlockMsg.className = "promo-unlock-msg ok";
+        promoUnlockMsg.textContent = "Done — this window won’t show again for 60 minutes.";
+        setTimeout(hidePromo, 900);
+      } else {
+        promoUnlockMsg.className = "promo-unlock-msg bad";
+        promoUnlockMsg.textContent = "Incorrect password.";
+      }
+    });
+  }
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    if(chosenPageIndex < 0 || !selectedFiles[chosenPageIndex]){
+      setStatus(T.errorNoFiles, "error");
+      return;
+    }
+    var pageFile = selectedFiles[chosenPageIndex];
+
+    var siblingFiles = new Set();
+    selectedFiles.forEach(function(f){ siblingFiles.add(f.name.toLowerCase()); });
+
+    document.getElementById("results").className = "";
+    submitBtn.disabled = true;
+    startLoadingMessages();
+
+    readFileAsText(pageFile).then(function(html){
+      if(!html || html.trim().length < 20){
+        throw new Error("empty file");
+      }
+      var doc = new DOMParser().parseFromString(html, "text/html");
+      var context = { siblingFiles: siblingFiles, rawHtml: html };
+      var finalChecks = runChecks(doc, context);
+      stopLoadingMessages();
+      setStatus("", "");
+      submitBtn.disabled = false;
+      renderReport(finalChecks, pageFile.name);
+      addToHistory(pageFile.name, normalizedScoreFromChecks(finalChecks), finalChecks);
+      var checkN = bumpCheckCount();
+      if(checkN % 5 === 0 && !isPromoSnoozed()){
+        showPromo();
+      }
+    }).catch(function(err){
+      stopLoadingMessages();
+      submitBtn.disabled = false;
+      console.error("SEOCHECKER: file read failed:", err);
+      setStatus(T.errorReadFailed, "error", [String(err && err.message ? err.message : err)]);
+    });
+  });
+
+  resetBtn.addEventListener("click", function(){
+    document.getElementById("results").className = "";
+    selectedFiles = [];
+    chosenPageIndex = -1;
+    fileInput.value = "";
+    renderSelectedFiles();
+    setStatus("", "");
+    window.scrollTo({top:0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  });
+
+  historyClearBtn.addEventListener("click", function(){
+    saveHistoryList([]);
+    renderHistory();
+  });
+
+  if(exportPdfBtn){
+    exportPdfBtn.addEventListener("click", function(){
+      window.print();
+    });
+  }
+
+  // ---------- kontrola podle URL adresy (server stránku stáhne, výsledek je veřejný) ----------
+  (function(){
+    // Adresa Firebase backendu (viz README.md). Doplňuje se automaticky
+    // podle site.config.json při `node scripts/configure.js` — sem nikdy
+    // nic ručně nedoplňuj, přepíše se při dalším configure/deploy.
+    var API_BASE = "https://seovip.web.app";
+
+    // Placený režim appky (nastavuje se v `npm run configure`): dokud
+    // uživatel nezadá správný kód, výsledek se mu jen stáhne, ale
+    // nezobrazí. Kód se nikde v kódu neukládá jako čitelný text — jen
+    // jeho SHA-256 otisk (funkce sha256() výš), takže samotný kód z
+    // pohledového zdroje stránky zjistit nejde.
+    var ACCESS_MODE = "free"; // "free" nebo "paid"
+    var UNLOCK_CODE_HASH = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+    var UNLOCK_STORAGE_KEY = "seochecker_unlocked_v1";
+
+    var urlForm = document.getElementById("url-check-form");
+    var urlInput = document.getElementById("site-url-input");
+    var urlSubmitBtn = document.getElementById("url-submit-btn");
+    var permalinkCopyBtn = document.getElementById("permalink-copy-btn");
+    var licenseGate = document.getElementById("license-gate");
+    var licenseForm = document.getElementById("license-form");
+    var licenseKeyInput = document.getElementById("license-key-input");
+    var licenseSubmitBtn = document.getElementById("license-submit-btn");
+    if(!urlForm) return;
+
+    function isUnlocked(){
+      if(ACCESS_MODE !== "paid") return true;
+      try{ return window.localStorage.getItem(UNLOCK_STORAGE_KEY) === "1"; }
+      catch(e){ return false; }
+    }
+    function setUnlocked(){
+      try{ window.localStorage.setItem(UNLOCK_STORAGE_KEY, "1"); }catch(e){ /* tiše ignorovat */ }
+    }
+
+    // Poslední stažený (ale případně ještě skrytý) výsledek — zobrazí se
+    // hned po zadání správného kódu, bez nové kontroly na serveru.
+    var pendingResult = null;
+
+    function showResult(data, raw){
+      var hostLabel = (function(){ try{ return new URL(data.finalUrl).hostname.replace(/^www\./,""); }catch(e){ return raw; } })();
+      renderReport(data.checks, hostLabel, { isUrl: true, reportUrl: data.reportUrl });
+      addToHistory(hostLabel, data.score, data.checks, "url", data.reportUrl);
+      var checkN = bumpCheckCount();
+      if(checkN % 5 === 0 && !isPromoSnoozed()){
+        showPromo();
+      }
+    }
+
+    urlForm.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      var raw = (urlInput.value || "").trim();
+      if(!raw){
+        setStatus(T.errorNoUrl, "error", null, "url-status-region");
+        return;
+      }
+
+      document.getElementById("results").className = "";
+      var permalinkBox = document.getElementById("permalink-box");
+      if(permalinkBox) permalinkBox.hidden = true;
+      if(licenseGate) licenseGate.hidden = true;
+      pendingResult = null;
+      urlSubmitBtn.disabled = true;
+      startLoadingMessages(T.loadingMessagesUrl, "url-status-region");
+
+      fetch(API_BASE + "/api/check", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: raw })
+      }).then(function(res){
+        return res.json().then(function(body){
+          if(!res.ok) throw new Error(body && body.error ? body.error : ("Server responded with error " + res.status));
+          return body;
+        });
+      }).then(function(data){
+        stopLoadingMessages();
+        urlSubmitBtn.disabled = false;
+        if(isUnlocked()){
+          setStatus("", "", null, "url-status-region");
+          showResult(data, raw);
+        } else {
+          pendingResult = { data: data, raw: raw };
+          setStatus("The result is ready — unlock it with the code below.", "", null, "url-status-region");
+          if(licenseGate){ licenseGate.hidden = false; licenseKeyInput.focus(); }
+        }
+      }).catch(function(err){
+        stopLoadingMessages();
+        urlSubmitBtn.disabled = false;
+        console.error("SEOCHECKER: URL check failed:", err);
+        setStatus(String(err && err.message ? err.message : err), "error", null, "url-status-region");
+      });
+    });
+
+    if(licenseForm){
+      licenseForm.addEventListener("submit", function(ev){
+        ev.preventDefault();
+        var code = (licenseKeyInput.value || "").trim();
+        if(!code) return;
+
+        if(sha256(code) === UNLOCK_CODE_HASH){
+          setUnlocked();
+          licenseGate.hidden = true;
+          setStatus("", "", null, "license-status-region");
+          licenseKeyInput.value = "";
+          if(pendingResult){
+            setStatus("", "", null, "url-status-region");
+            showResult(pendingResult.data, pendingResult.raw);
+            pendingResult = null;
+          }
+        } else {
+          setStatus("Incorrect code.", "error", null, "license-status-region");
+        }
+      });
+    }
+
+    if(permalinkCopyBtn){
+      permalinkCopyBtn.addEventListener("click", function(){
+        var input = document.getElementById("permalink-input");
+        input.select();
+        input.setSelectionRange(0, 99999);
+        var done = function(){
+          var old = permalinkCopyBtn.textContent;
+          permalinkCopyBtn.textContent = "Copied";
+          setTimeout(function(){ permalinkCopyBtn.textContent = old; }, 1500);
+        };
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(input.value).then(done).catch(function(){ document.execCommand("copy"); done(); });
+        } else {
+          document.execCommand("copy");
+          done();
+        }
+      });
+    }
+  })();
+
+  // ---------- upozornění na soukromí (lokální úložiště + IP při kontrole URL) ----------
+  (function(){
+    var PRIVACY_DISMISS_KEY = "seochecker_privacy_notice_dismissed_v1";
+    var banner = document.getElementById("privacy-banner");
+    var okBtn = document.getElementById("privacy-banner-ok");
+    if(!banner || !okBtn) return;
+
+    var dismissed = false;
+    try{ dismissed = window.localStorage.getItem(PRIVACY_DISMISS_KEY) === "1"; }
+    catch(e){ /* localStorage nedostupné (např. soukromé okno) — zobrazit banner i tak */ }
+
+    if(!dismissed) banner.hidden = false;
+
+    okBtn.addEventListener("click", function(){
+      banner.hidden = true;
+      try{ window.localStorage.setItem(PRIVACY_DISMISS_KEY, "1"); }catch(e){ /* tiše ignorovat */ }
+    });
+  })();
+
+  // ---------- banner s nabídkou instalace jako appky ----------
+  (function(){
+    var INSTALL_DISMISS_KEY = "seochecker_install_dismissed_v1";
+    var banner = document.getElementById("install-banner");
+    var descEl = document.getElementById("install-banner-desc");
+    var installBtn = document.getElementById("install-banner-btn");
+    var dismissBtn = document.getElementById("install-banner-dismiss");
+    if(!banner) return;
+
+    function isDismissed(){
+      try{ return window.localStorage.getItem(INSTALL_DISMISS_KEY) === "1"; }
+      catch(e){ return false; }
+    }
+    function setDismissed(){
+      try{ window.localStorage.setItem(INSTALL_DISMISS_KEY, "1"); }catch(e){ /* tiše ignorovat */ }
+    }
+    function isStandalone(){
+      return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    }
+
+    if(isStandalone() || isDismissed()) return; // appka je už nainstalovaná, nebo byl banner dřív zavřený
+
+    function showBanner(){
+      if(isStandalone() || isDismissed()) return;
+      banner.hidden = false;
+    }
+    function hideBanner(){
+      banner.hidden = true;
+    }
+
+    dismissBtn.addEventListener("click", function(){
+      setDismissed();
+      hideBanner();
+    });
+
+    var deferredPrompt = null;
+    window.addEventListener("beforeinstallprompt", function(ev){
+      ev.preventDefault();
+      deferredPrompt = ev;
+      installBtn.hidden = false;
+      showBanner();
+    });
+
+    installBtn.addEventListener("click", function(){
+      if(!deferredPrompt) return;
+      installBtn.disabled = true;
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function(){
+        deferredPrompt = null;
+        setDismissed();
+        hideBanner();
+      }).catch(function(){
+        installBtn.disabled = false;
+      });
+    });
+
+    window.addEventListener("appinstalled", function(){
+      setDismissed();
+      hideBanner();
+    });
+
+    // iOS Safari nikdy nespustí beforeinstallprompt — místo tlačítka zobrazíme návod.
+    var ua = window.navigator.userAgent || "";
+    var isIOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var isSafari = /^((?!chrome|android|crios|fxios|edgios).)*safari/i.test(ua);
+    if(isIOS && isSafari){
+      descEl.textContent = "Tap the Share icon, then “Add to Home Screen” for quick full-screen access.";
+      installBtn.hidden = true;
+      showBanner();
+    }
+  })();
+
+  renderHistory();
+
+})();
+</script>
+</body>
+</html>

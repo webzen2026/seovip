@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zásady ochrany osobních údajů | SEOVIP</title>
+<meta name="description" content="Zásady ochrany osobních údajů (GDPR) pro SEOVIP — jaké údaje appka zpracovává, proč, jak dlouho a jaká máte práva.">
+<link rel="canonical" href="https://webzen2026.github.io/seovip/privacy.html">
+<link rel="alternate" hreflang="cs" href="https://webzen2026.github.io/seovip/privacy.html">
+<link rel="alternate" hreflang="en" href="https://webzen2026.github.io/seovip/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://webzen2026.github.io/seovip/privacy.html">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ui-bg-0:#f8fafc;--ui-bg-1:#ffffff;--ui-bg-2:#ffffff;--ui-line:#dfe6ee;
+    --ui-text:#0f172a;--ui-text-dim:#64748b;--ui-accent:#0891b2;--radius:12px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:var(--ui-bg-0);color:var(--ui-text);font-family:'Inter',sans-serif;line-height:1.6;}
+  a{color:var(--ui-accent);}
+  .wrap{max-width:760px;margin:0 auto;padding:36px 20px 70px;}
+  .kicker{font-family:monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ui-text-dim);margin:0 0 8px;}
+  h1{font-family:'Manrope',sans-serif;font-size:clamp(22px,5vw,30px);margin:0 0 6px;}
+  .updated{color:var(--ui-text-dim);font-size:13px;margin:0 0 30px;}
+  h2{font-family:'Manrope',sans-serif;font-size:18px;margin:34px 0 10px;padding-top:14px;border-top:1px solid var(--ui-line);}
+  h2:first-of-type{border-top:none;padding-top:0;}
+  p{margin:0 0 12px;color:var(--ui-text);}
+  p.dim,li.dim{color:var(--ui-text-dim);}
+  ul{margin:0 0 12px;padding-left:20px;}
+  li{margin:0 0 8px;}
+  .card{background:var(--ui-bg-2);border:1px solid var(--ui-line);border-radius:var(--radius);padding:14px 16px;margin:0 0 14px;}
+  .back-link{display:inline-block;margin-top:30px;font-size:14px;}
+  code{background:var(--ui-bg-2);padding:1px 6px;border-radius:4px;font-size:0.92em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">SEOVIP</p>
+  <h1>Zásady ochrany osobních údajů</h1>
+  <p class="updated">Poslední aktualizace: 13. září 2026</p>
+
+  <p>Tyto zásady popisují, jaké osobní údaje nástroj SEOVIP (dále jen „appka“) zpracovává, k jakému účelu, jak dlouho je uchovává a jaká v souvislosti s tím máte práva podle obecného nařízení o ochraně osobních údajů (GDPR).</p>
+
+  <h2>1. Kdo je správcem</h2>
+  <p>Správcem osobních údajů je provozovatel appky SEOVIP. Ve věcech ochrany osobních údajů nás můžete kontaktovat přes stránku appky <a href="https://webzen2026.github.io/seovip">https://webzen2026.github.io/seovip</a>.</p>
+
+  <h2>2. Jaké údaje zpracováváme</h2>
+
+  <div class="card">
+    <p><strong>a) IP adresa při kontrole webu</strong></p>
+    <p class="dim">Když appku použijete ke kontrole nějaké URL adresy, dočasně si uložíme vaši IP adresu, abychom mohli omezit počet kontrol na jednu adresu (max. 3 kontroly za 24 hodin — ochrana appky před zneužitím a přetížením). Právním základem je náš oprávněný zájem na provozuschopnosti bezplatné služby (čl. 6 odst. 1 písm. f) GDPR). Záznam se po uplynutí 24hodinového okna sám přepisuje, IP adresu dál neuchováváme ani nijak nevyhodnocujeme.</p>
+  </div>
+
+  <div class="card">
+    <p><strong>b) Údaje ve vašem prohlížeči (localStorage)</strong></p>
+    <p class="dim">Appka si kvůli pohodlí ukládá přímo ve vašem prohlížeči (technologie <code>localStorage</code>, ne cookies) krátkou historii vašich předchozích kontrol a pár drobných nastavení (např. že jste zavřeli nějaké upozornění). Tahle data zůstávají jen na vašem zařízení, appka je nikam neodesílá a my k nim nemáme přístup. Kdykoliv je můžete smazat tlačítkem v appce, nebo smazáním dat stránky v nastavení prohlížeče.</p>
+  </div>
+
+  <div class="card">
+    <p><strong>c) Výsledek kontroly webové stránky (veřejný report)</strong></p>
+    <p class="dim">Zadáte-li ke kontrole URL adresu, appka na serveru stáhne veřejně dostupný HTML kód té stránky a vyhodnotí technické SEO signály (např. délku title tagu, přítomnost meta popisu, nadpisy, mobilní zobrazení). Výsledek uložíme a zveřejníme jako samostatnou, vyhledávači indexovatelnou stránku na adrese <code>https://seovip.web.app/report/&lt;doména&gt;</code>. Jde o technické informace o veřejně dostupné webové prezentaci, ne o osobní údaje ve smyslu GDPR — výjimkou by bylo, kdyby kontrolovaná stránka sama obsahovala osobní údaje přímo ve zkoumaných technických prvcích (např. jméno v meta popisu); ty by se pak mohly krátce objevit i v reportu jako citace veřejně publikovaného obsahu. Report zůstává zveřejněný, dokud stránku někdo nenechá zkontrolovat znovu (report se přepíše), nebo dokud o jeho odstranění nepožádá vlastník webu — viz bod 5.</p>
+  </div>
+
+  <div class="card">
+    <p><strong>d) Žádost o odstranění reportu</strong></p>
+    <p class="dim">Pokud nám napíšete se žádostí o odstranění reportu o vašem webu, vaši e-mailovou adresu a obsah zprávy zpracujeme výhradně za účelem vyřízení této žádosti.</p>
+  </div>
+
+  <h2>3. Cookies</h2>
+  <p>Appka nepoužívá žádné cookies, žádné reklamní ani analytické sledování třetích stran. Jediné, co appka ukládá ve vašem prohlížeči, je popsáno v bodě 2b) výše.</p>
+
+  <h2>4. Kdo má k údajům přístup</h2>
+  <p>Appka běží na infrastruktuře Google Cloud / Firebase (poskytovatel Google), servery v regionu <code>europe-west3</code>. Google je v tomto vztahu zpracovatelem — technickým poskytovatelem infrastruktury, nikoli příjemcem údajů pro vlastní účely. Žádné údaje neprodáváme ani nepředáváme jiným třetím stranám pro marketingové účely.</p>
+
+  <h2>5. Jak dlouho údaje uchováváme</h2>
+  <ul>
+    <li>IP adresa pro omezení počtu kontrol: max. 24 hodin (rolling okno, pak se přepisuje).</li>
+    <li>Veřejný report o kontrolované stránce: dokud není nahrazen novou kontrolou stejné domény, nebo dokud o jeho odstranění nepožádá vlastník webu na kontaktu výše.</li>
+    <li>Historie kontrol a nastavení appky ve vašem prohlížeči: dokud je sami nesmažete, nebo dokud je nesmaže váš prohlížeč.</li>
+    <li>E-mailová komunikace ohledně žádosti o odstranění reportu: po dobu nutnou k jejímu vyřízení a případné dokumentaci, že k vyřízení došlo.</li>
+  </ul>
+
+  <h2>6. Vaše práva</h2>
+  <p>V souvislosti se zpracováním osobních údajů máte právo na přístup k údajům, jejich opravu nebo výmaz, omezení zpracování, přenositelnost údajů a právo vznést námitku proti zpracování založenému na oprávněném zájmu (viz bod 2a). Pokud se domníváte, že zpracování vašich údajů porušuje GDPR, máte právo podat stížnost u <a href="https://www.uoou.cz" target="_blank" rel="noopener">Úřadu pro ochranu osobních údajů</a> (uoou.cz).</p>
+
+  <h2>7. Změny těchto zásad</h2>
+  <p>Tyto zásady můžeme čas od času aktualizovat, například když appka získá novou funkci, která pracuje s údaji jinak. Aktuální verze je vždy na této adrese, datum poslední aktualizace je uvedeno nahoře.</p>
+
+  <a class="back-link" href="https://webzen2026.github.io/seovip">← Zpět na SEOVIP</a>
+  <p class="updated"><a href="en/privacy.html">🌐 Read this in English</a></p>
+</div>
+</body>
+</html>
