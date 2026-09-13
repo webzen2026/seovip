@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://webzen2026.github.io/seovip/sitemap.xml
