@@ -1709,7 +1709,8 @@
       var brand = document.querySelector(".topbar-brand");
       if(!brand) return;
       var clicks = 0, lastClick = 0;
-      brand.addEventListener("click", function(){
+      brand.addEventListener("click", function(e){
+        e.preventDefault(); // logo je jen značka appky, neskákat na #top
         var now = Date.now();
         clicks = (now - lastClick < 2000) ? clicks + 1 : 1;
         lastClick = now;
