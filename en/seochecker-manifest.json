@@ -1,0 +1,25 @@
+{
+  "name": "SEOCHECKER",
+  "short_name": "SEOCHECKER",
+  "description": "Free SEO check for your website. Enter an address and get an overview of SEO signals — meta tags, mobile view, content, social sharing and indexability. No registration.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#ffffff",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "./seochecker-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./seochecker-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
