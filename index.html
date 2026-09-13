@@ -790,11 +790,9 @@
 
   <footer class="app-footer">
     <div class="wrap">
-      <p>Nahrajete-li místo adresy webu HTML soubor, kontrola proběhne čistě lokálně ve vašem prohlížeči a nikam se neposílá.</p>
-      <p>Kvůli pohodlí si appka ukládá krátkou historii posledních kontrol (adresa/název souboru a skóre) — čistě lokálně ve vašem prohlížeči (localStorage). Nikam se neodesílá, nikdo jiný ji nevidí a kdykoliv ji můžete smazat tlačítkem „Smazat historii".</p>
-      <p>Kontrola hodnotí jen nahraný HTML soubor tak, jak je — nenahrazuje audit od SEO specialisty ani neměří žebříčky ve vyhledávání.</p>
       <div class="footer-links">
         <a href="privacy.html">🔒 Ochrana osobních údajů</a>
+        <a href="https://seovip.web.app/nedavno-kontrolovane" target="_blank" rel="noopener">🌍 Nedávno zkontrolované weby</a>
       </div>
     </div>
   </footer>
@@ -1696,6 +1694,40 @@
     var UNLOCK_CODE_HASH = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     var UNLOCK_STORAGE_KEY = "seochecker_unlocked_v1";
 
+    // Skrytý přepínač pro majitele appky: 10x klik na ikonku v topbaru
+    // (do 2 vteřin) vyžádá kód a po jeho ověření (jen SHA-256 otisk,
+    // stejně jako u UNLOCK_CODE_HASH výš) vypne pro tohle zařízení denní
+    // limit počtu kontrol — posílá se jako hlavička X-Owner-Key, kterou
+    // ověřuje backend (functions/index.js).
+    var OWNER_BYPASS_HASH = "f8d670a5f6282fb5bc5c8262b7ddfe861dd2785d32afacf4af1be495dee0f170";
+    var OWNER_BYPASS_STORAGE_KEY = "seochecker_owner_key_v1";
+    function getOwnerKey(){
+      try{ return window.localStorage.getItem(OWNER_BYPASS_STORAGE_KEY) || ""; }
+      catch(e){ return ""; }
+    }
+    (function(){
+      var brand = document.querySelector(".topbar-brand");
+      if(!brand) return;
+      var clicks = 0, lastClick = 0;
+      brand.addEventListener("click", function(){
+        var now = Date.now();
+        clicks = (now - lastClick < 2000) ? clicks + 1 : 1;
+        lastClick = now;
+        if(clicks < 10) return;
+        clicks = 0;
+        if(getOwnerKey()){
+          try{ window.localStorage.removeItem(OWNER_BYPASS_STORAGE_KEY); }catch(e){ /* tiše ignorovat */ }
+          window.alert("Denní limit kontrol je pro tohle zařízení zase zapnutý.");
+          return;
+        }
+        var code = window.prompt("Kód pro vypnutí denního limitu kontrol:");
+        if(code && sha256(code) === OWNER_BYPASS_HASH){
+          try{ window.localStorage.setItem(OWNER_BYPASS_STORAGE_KEY, code); }catch(e){ /* tiše ignorovat */ }
+          window.alert("Denní limit kontrol je pro tohle zařízení vypnutý.");
+        }
+      });
+    })();
+
     var urlForm = document.getElementById("url-check-form");
     var urlInput = document.getElementById("site-url-input");
     var urlSubmitBtn = document.getElementById("url-submit-btn");
@@ -1745,9 +1777,12 @@
       urlSubmitBtn.disabled = true;
       startLoadingMessages(T.loadingMessagesUrl, "url-status-region");
 
+      var ownerKey = getOwnerKey();
+      var checkHeaders = { "Content-Type": "application/json" };
+      if(ownerKey) checkHeaders["X-Owner-Key"] = ownerKey;
       fetch(API_BASE + "/api/check", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: checkHeaders,
         body: JSON.stringify({ url: raw })
       }).then(function(res){
         return res.json().then(function(body){
