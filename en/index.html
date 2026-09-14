@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./seochecker-favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./seochecker-apple-touch-icon.png">
 <link rel="manifest" href="./seochecker-manifest.json">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0a0f14">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -98,12 +98,12 @@
 
 <style>
   :root{
-    --ui-bg-0:#f8fafc;
-    --ui-bg-1:#ffffff;
-    --ui-bg-2:#ffffff;
-    --ui-line:#dfe6ee;
-    --ui-text:#0f172a;
-    --ui-text-dim:#64748b;
+    --ui-bg-0:#0a0f14;
+    --ui-bg-1:#121820;
+    --ui-bg-2:#171f2a;
+    --ui-line:#232c38;
+    --ui-text:#e7edf3;
+    --ui-text-dim:#90a0b2;
     --ui-accent:#0891b2;
     --ui-accent-glow:#0891b2;
     --pass:#16a34a;
@@ -400,6 +400,24 @@
   }
   .install-banner-dismiss:hover{border-color:var(--ui-accent);color:var(--ui-accent);}
 
+  /* ---------- how it works (extra SEO text) ---------- */
+  .how-wrap{border-top:1px solid var(--ui-line);padding:38px 0 8px;}
+  .how-wrap h2{font-family:'Manrope',sans-serif;font-size:22px;margin:0 0 18px;}
+  .how-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:20px;}
+  @media(min-width:680px){.how-grid{grid-template-columns:repeat(3,1fr);}}
+  .how-step{
+    background:var(--ui-bg-2);border:1px solid var(--ui-line);border-radius:var(--radius);
+    padding:16px;
+  }
+  .how-num{
+    display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;
+    border-radius:50%;background:var(--ui-accent);color:#fff;font-family:'IBM Plex Mono',monospace;
+    font-size:13px;font-weight:600;margin-bottom:10px;
+  }
+  .how-step h3{font-family:'Manrope',sans-serif;font-size:15px;margin:0 0 6px;color:var(--ui-text);}
+  .how-step p{margin:0;color:var(--ui-text-dim);font-size:13.5px;line-height:1.6;}
+  .how-note{color:var(--ui-text-dim);font-size:14px;max-width:64ch;line-height:1.65;margin:0 0 8px;}
+
   /* ---------- articles ---------- */
   .articles-wrap{border-top:1px solid var(--ui-line);padding:44px 0 20px;}
   .articles-wrap h2{font-family:'Manrope',sans-serif;font-size:24px;margin:0 0 6px;}
@@ -641,6 +659,30 @@
         <div class="history-list" id="history-list"></div>
         <p class="history-note">History stays only in your browser — it’s never sent anywhere.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="how-wrap">
+    <div class="wrap">
+      <h2>How SEOVIP works</h2>
+      <div class="how-grid">
+        <div class="how-step">
+          <span class="how-num">1</span>
+          <h3>Enter your website address</h3>
+          <p>Type in the domain you want to check — just <code>example.com</code>, no installation and no sign-up required.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">2</span>
+          <h3>SEOVIP crawls the page</h3>
+          <p>In the background we fetch the publicly available HTML code of the page and evaluate dozens of technical SEO signals — from the title tag through mobile view to structured data and robots.txt.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">3</span>
+          <h3>You get a clear result</h3>
+          <p>Within a few seconds you see a score, specific findings grouped into categories, and recommendations on what to fix first.</p>
+        </div>
+      </div>
+      <p class="how-note">SEOVIP is built mainly for owners of small websites and online shops, freelancers and agencies building sites for clients, and anyone who simply wants to confirm that their new page can be found and displayed correctly by search engines. The check is free and there's no limit on how many different websites you can check (just a 3-checks-per-24-hours limit per address to prevent abuse).</p>
     </div>
   </section>
 
