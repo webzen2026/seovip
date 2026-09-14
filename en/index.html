@@ -32,6 +32,7 @@
 <meta property="og:image" content="https://webzen2026.github.io/seovip/seochecker-og-image-en.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SEOVIP — free SEO check for your website">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SEOVIP">
@@ -91,7 +92,45 @@
       "@type": "Question",
       "name": "How long until SEO changes show up in search?",
       "acceptedAnswer": { "@type": "Answer", "text": "Small fixes, like the title or meta description, can show up within days to weeks. Bigger changes to content or site structure usually take weeks to months." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many different websites can I check?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There's no limit on the number of different websites you can check. The only limit is 3 checks per 24 hours from a single IP address — that protects the app from overload, it's not a limit on the number of different domains." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the 0–100 score mean?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The score sums up how well a page satisfies individual technical SEO signals — meta tags, mobile view, content, social sharing and indexability. A higher score means fewer technical obstacles for search engines. It isn't a guarantee of a specific ranking though — that's affected by far more than just technical SEO." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the result of a website check publicly available?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If you submit a website address for checking, the result is stored as a separate public page that Google can also find. If you want a purely private check, upload an HTML file instead of an address — that check runs only in your browser and is never stored anywhere." }
     }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How SEOVIP works",
+  "description": "The three steps of a free SEO check with SEOVIP.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Enter your website address", "text": "Type in the domain you want to check — just example.com, no installation and no sign-up required." },
+    { "@type": "HowToStep", "position": 2, "name": "SEOVIP crawls the page", "text": "In the background the app fetches the publicly available HTML code of the page and evaluates dozens of technical SEO signals — from the title tag through mobile view to structured data and robots.txt." },
+    { "@type": "HowToStep", "position": 3, "name": "You get a clear result", "text": "Within a few seconds you see a score, specific findings grouped into categories, and recommendations on what to fix first." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SYNTHLUCIDA", "item": "https://synthlucida.com" },
+    { "@type": "ListItem", "position": 2, "name": "SEOVIP", "item": "https://webzen2026.github.io/seovip/en/" }
   ]
 }
 </script>
@@ -548,6 +587,7 @@
   <div class="topbar-actions">
     <a class="save-btn" href="../" title="Czech version">🌐 <span>CZ</span></a>
     <a class="save-btn" href="#articles" title="Articles">📚 <span>Articles</span></a>
+    <a class="save-btn" href="#faq" title="FAQ">❓ <span>FAQ</span></a>
   </div>
 </div>
 
@@ -845,6 +885,69 @@
     </div>
   </section>
 
+  <section class="articles-wrap" id="faq">
+    <div class="wrap">
+      <h2>Frequently asked questions</h2>
+      <p class="lead">Quick answers to what people most often want to know about SEOVIP.</p>
+
+      <details class="article">
+        <summary>What is SEOVIP?</summary>
+        <div class="article-content">
+          <p>A free tool that checks your website at a given address, or evaluates an uploaded HTML file directly in your browser — and shows key SEO signals: meta tags, mobile view, content, social sharing and indexability.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Is the tool free, and do I need to register?</summary>
+        <div class="article-content">
+          <p>Yes, the tool is completely free and requires no registration.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>How many different websites can I check?</summary>
+        <div class="article-content">
+          <p>There's no limit on the number of different websites you can check. The only limit is 3 checks per 24 hours from a single IP address — that protects the app from overload, it's not a limit on the number of different domains.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>What does the 0–100 score mean?</summary>
+        <div class="article-content">
+          <p>The score sums up how well a page satisfies individual technical SEO signals — meta tags, mobile view, content, social sharing and indexability. A higher score means fewer technical obstacles for search engines. It isn't a guarantee of a specific ranking though — that's affected by far more than just technical SEO.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Is the result of a website check publicly available?</summary>
+        <div class="article-content">
+          <p>If you submit a website address for checking, the result is stored as a separate public page that Google can also find. If you want a purely private check, upload an HTML file instead of an address — that check runs only in your browser and is never stored anywhere.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Does the app store my data?</summary>
+        <div class="article-content">
+          <p>It depends on how you use the app. If you enter a website address, we fetch the page on our server and store the result as a public page that Google can also find — so don't use this mode for unindexed or private content. If you upload an HTML file instead, the check runs purely locally in your browser and is never sent anywhere.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Why does the check fail for some files?</summary>
+        <div class="article-content">
+          <p>Most often the file isn't a valid HTML export of your site, or it's corrupted or empty. Try exporting the page again and uploading the resulting .html file once more.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>How long until SEO changes show up in search?</summary>
+        <div class="article-content">
+          <p>Small fixes, like the title or meta description, can show up within days to weeks. Bigger changes to content or site structure usually take weeks to months.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
   <footer class="app-footer">
     <div class="wrap">
       <p>SEOVIP is built with <a href="https://synthlucida.com/landing_webzenith-en.html" target="_blank" rel="noopener">WEBZENITH</a> — want to build your own website just as fast, no coding needed? Try <a href="https://synthlucida.com/landing_webzenith-en.html" target="_blank" rel="noopener">WEBZENITH</a>.</p>
@@ -990,6 +1093,15 @@
       addCheck(list,"meta","canonical","fail",0,4,"Canonical link","Missing canonical link.");
     }
 
+    if(canonHref && /^https:\/\//i.test(canonHref)){
+      var insecureEls = doc.querySelectorAll('img[src^="http://"], script[src^="http://"], link[rel="stylesheet"][href^="http://"], iframe[src^="http://"]');
+      if(insecureEls.length === 0){
+        addCheck(list,"meta","mixedcontent","pass",3,3,"Secure content (mixed content)","No resources loaded over insecure HTTP were found.");
+      } else {
+        addCheck(list,"meta","mixedcontent","warn",0,3,"Secure content (mixed content)", insecureEls.length + " resource(s) (image, script or stylesheet) are loaded over insecure HTTP even though the page is on HTTPS — browsers may block or flag these as untrusted.");
+      }
+    }
+
     var htmlLang = doc.documentElement.getAttribute("lang");
     if(htmlLang){
       addCheck(list,"meta","lang","pass",2,2,"Page language","Set (lang=\"" + htmlLang + "\").");
@@ -1025,11 +1137,31 @@
       addCheck(list,"mobile","viewport","fail",0,8,"Mobile view (viewport)","Missing meta viewport — the page may not display correctly on mobile.");
     }
 
+    if(viewportEl){
+      var viewportContent = (viewportEl.getAttribute("content") || "").toLowerCase();
+      if(/user-scalable\s*=\s*no/.test(viewportContent) || /maximum-scale\s*=\s*1(\.0)?\b/.test(viewportContent)){
+        addCheck(list,"mobile","viewportzoom","warn",0,3,"Pinch-to-zoom (viewport)","The viewport blocks zooming (user-scalable=no or maximum-scale=1) — this hurts readability for people with visual impairments, and Google flags it as a mobile-usability issue.");
+      } else {
+        addCheck(list,"mobile","viewportzoom","pass",3,3,"Pinch-to-zoom (viewport)","The viewport doesn't block zooming.");
+      }
+    }
+
     var faviconEl = doc.querySelector('link[rel~="icon"]');
     if(faviconEl){
       addCheck(list,"mobile","favicon","pass",2,2,"Favicon","Favicon is set.");
     } else {
       addCheck(list,"mobile","favicon","warn",0,2,"Favicon","Couldn’t find a favicon.");
+    }
+
+    var manifestEl = doc.querySelector('link[rel="manifest"]');
+    var appleTouchEl = doc.querySelector('link[rel="apple-touch-icon"]');
+    var pwaCount = [manifestEl, appleTouchEl].filter(Boolean).length;
+    if(pwaCount === 2){
+      addCheck(list,"mobile","pwa","pass",2,2,"Mobile icons & manifest","The page has both a web app manifest and an apple-touch-icon.");
+    } else if(pwaCount === 1){
+      addCheck(list,"mobile","pwa","warn",1,2,"Mobile icons & manifest", manifestEl ? "Missing apple-touch-icon (the icon used for adding to the home screen on iOS)." : "Missing web app manifest (link rel=\"manifest\").");
+    } else {
+      addCheck(list,"mobile","pwa","warn",0,2,"Mobile icons & manifest","Missing both a web app manifest and an apple-touch-icon — the page can't be properly added to a phone's home screen.");
     }
 
     var blankLinks = doc.querySelectorAll('a[target="_blank"]');
@@ -1063,6 +1195,37 @@
       addCheck(list,"content","headings","pass",5,5,"Heading structure","The page uses additional heading levels (H2 and below).");
     } else {
       addCheck(list,"content","headings","warn",0,5,"Heading structure","Apart from H1, the page doesn’t use any other headings.");
+    }
+
+    var allHeadingLevels = Array.prototype.map.call(doc.querySelectorAll("h1,h2,h3,h4,h5,h6"), function(h){ return parseInt(h.tagName.charAt(1), 10); });
+    var skippedLevel = false;
+    for(var hi = 1; hi < allHeadingLevels.length; hi++){
+      if(allHeadingLevels[hi] - allHeadingLevels[hi-1] > 1){ skippedLevel = true; break; }
+    }
+    if(allHeadingLevels.length === 0){
+      addCheck(list,"content","headingorder","warn",0,3,"Heading order","The page has no headings to evaluate the order of.");
+    } else if(!skippedLevel){
+      addCheck(list,"content","headingorder","pass",3,3,"Heading order","Heading levels follow on from each other without skipping (e.g. straight from H1 to H3).");
+    } else {
+      addCheck(list,"content","headingorder","warn",0,3,"Heading order","The heading structure skips a level somewhere (e.g. straight from H1 to H3) — this makes navigation harder for screen readers and search engines alike.");
+    }
+
+    var idEls = doc.querySelectorAll("[id]");
+    var seenIds = Object.create(null);
+    var dupeIds = [];
+    idEls.forEach(function(el){
+      var idVal = el.getAttribute("id");
+      if(!idVal) return;
+      if(seenIds[idVal]){
+        if(dupeIds.indexOf(idVal) === -1) dupeIds.push(idVal);
+      } else {
+        seenIds[idVal] = true;
+      }
+    });
+    if(dupeIds.length === 0){
+      addCheck(list,"content","dupeids","pass",2,2,"HTML validity (duplicate IDs)","No duplicate id attributes were found.");
+    } else {
+      addCheck(list,"content","dupeids","warn",0,2,"HTML validity (duplicate IDs)", "Found " + dupeIds.length + " duplicate ID(s) (e.g. “" + dupeIds[0] + "”) — this can break anchor links and is invalid HTML.");
     }
 
     var wc = wordCount(doc);
@@ -1106,6 +1269,18 @@
         addCheck(list,"content","imgdims","warn",ptsDims,4,"Image dimensions (width/height)", missingDims + " out of " + imgs.length + " images are missing a width/height.");
       } else {
         addCheck(list,"content","imgdims","fail",ptsDims,4,"Image dimensions (width/height)", missingDims + " out of " + imgs.length + " images are missing a width/height.");
+      }
+    }
+
+    if(imgs.length >= 3){
+      var withSrcset = 0;
+      imgs.forEach(function(img){ if(img.hasAttribute("srcset")) withSrcset++; });
+      if(withSrcset === imgs.length){
+        addCheck(list,"content","srcset","pass",2,2,"Responsive images (srcset)","All images offer multiple sizes via the srcset attribute.");
+      } else if(withSrcset > 0){
+        addCheck(list,"content","srcset","warn",1,2,"Responsive images (srcset)", (imgs.length - withSrcset) + " out of " + imgs.length + " images don't offer srcset for different screen sizes.");
+      } else {
+        addCheck(list,"content","srcset","warn",0,2,"Responsive images (srcset)","No image uses srcset — mobile devices may end up downloading unnecessarily large images.");
       }
     }
 
