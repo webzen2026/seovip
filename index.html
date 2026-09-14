@@ -32,6 +32,7 @@
 <meta property="og:image" content="https://webzen2026.github.io/seovip/seochecker-og-image-cz.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SEOVIP — bezplatná SEO kontrola webu">
 <meta property="og:locale" content="cs_CZ">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SEOVIP">
@@ -80,7 +81,7 @@
     {
       "@type": "Question",
       "name": "Ukládá SEOCHECKER moje data?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Záleží na tom, jak SEOCHECKER použijete. Zadáte-li adresu webu, stránku stáhneme na serveru a výsledek uložíme jako veřejnou stránku, kterou může najít i Google — proto nepoužívejte tento režim pro needexovaný nebo soukromý obsah. Nahrajete-li místo toho HTML soubor, kontrola proběhne jen lokálně ve vašem prohlížeči a nikam se neposílá. Prohlížeč si navíc pro pohodlí ukládá krátkou historii posledních kontrol (název/adresu a skóre) lokálně na vašem zařízení — tu jde kdykoliv smazat." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Záleží na tom, jak SEOCHECKER použijete. Zadáte-li adresu webu, stránku stáhneme na serveru a výsledek uložíme jako veřejnou stránku, kterou může najít i Google — proto nepoužívejte tento režim pro neindexovaný nebo soukromý obsah. Nahrajete-li místo toho HTML soubor, kontrola proběhne jen lokálně ve vašem prohlížeči a nikam se neposílá. Prohlížeč si navíc pro pohodlí ukládá krátkou historii posledních kontrol (název/adresu a skóre) lokálně na vašem zařízení — tu jde kdykoliv smazat." }
     },
     {
       "@type": "Question",
@@ -91,7 +92,45 @@
       "@type": "Question",
       "name": "Jak dlouho trvá, než se SEO změny projeví ve vyhledávání?",
       "acceptedAnswer": { "@type": "Answer", "text": "Menší opravy, jako title nebo meta popis, se mohou projevit v řádu dní až týdnů. Větší změny obsahu nebo struktury webu spíš v řádu týdnů až měsíců." }
+    },
+    {
+      "@type": "Question",
+      "name": "Kolik různých webů si mohu nechat zkontrolovat?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Počet různých webů, které si necháte zkontrolovat, není nijak omezený. Jediné omezení je 3 kontroly za 24 hodin z jedné IP adresy — chrání to appku před přetížením, není to limit na počet různých domén." }
+    },
+    {
+      "@type": "Question",
+      "name": "Co znamená skóre 0–100, které appka ukáže?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Skóre shrnuje, jak dobře stránka plní jednotlivé technické SEO signály — meta údaje, mobilní zobrazení, obsah, sdílení na sítích a indexovatelnost. Čím vyšší skóre, tím méně technických překážek stránka pro vyhledávače má. Nejde ale o zaručenou pozici ve výsledcích vyhledávání — tu ovlivňuje mnohem víc faktorů než jen technické SEO." }
+    },
+    {
+      "@type": "Question",
+      "name": "Je výsledek kontroly webu veřejně dostupný?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pokud zadáte adresu webu ke kontrole, výsledek se uloží jako samostatná veřejná stránka, kterou může najít i Google. Pokud chcete kontrolu čistě soukromě, nahrajte místo adresy přímo HTML soubor — ta proběhne jen ve vašem prohlížeči a nikam se neukládá." }
     }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Jak SEOVIP funguje",
+  "description": "Tři kroky bezplatné SEO kontroly webu nástrojem SEOVIP.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Zadáte adresu webu", "text": "Napíšete doménu, kterou chcete zkontrolovat — stačí example.cz, nemusíte nic instalovat ani se nikde registrovat." },
+    { "@type": "HowToStep", "position": 2, "name": "SEOVIP stránku projde", "text": "Appka na pozadí stáhne veřejně dostupný HTML kód stránky a vyhodnotí desítky technických SEO signálů — od title tagu přes mobilní zobrazení až po strukturovaná data a robots.txt." },
+    { "@type": "HowToStep", "position": 3, "name": "Dostanete přehledný výsledek", "text": "Během pár vteřin vidíte skóre, konkrétní nálezy rozdělené do kategorií a doporučení, na co se zaměřit nejdřív." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SYNTHLUCIDA", "item": "https://synthlucida.com" },
+    { "@type": "ListItem", "position": 2, "name": "SEOVIP", "item": "https://webzen2026.github.io/seovip/" }
   ]
 }
 </script>
@@ -548,6 +587,7 @@
   <div class="topbar-actions">
     <a class="save-btn" href="en/" title="English version">🌐 <span>EN</span></a>
     <a class="save-btn" href="#articles" title="Články">📚 <span>Články</span></a>
+    <a class="save-btn" href="#faq" title="Časté dotazy">❓ <span>FAQ</span></a>
   </div>
 </div>
 
@@ -845,6 +885,69 @@
     </div>
   </section>
 
+  <section class="articles-wrap" id="faq">
+    <div class="wrap">
+      <h2>Časté dotazy</h2>
+      <p class="lead">Rychlé odpovědi na to, co lidi o SEOVIP nejčastěji zajímá.</p>
+
+      <details class="article">
+        <summary>Co je SEOVIP?</summary>
+        <div class="article-content">
+          <p>Bezplatný nástroj, který zkontroluje váš web na adrese, nebo přímo v prohlížeči vyhodnotí nahraný HTML soubor — a ukáže základní SEO signály: meta údaje, mobilní zobrazení, obsah, sdílení na sítích a indexovatelnost.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Je nástroj zdarma a je potřeba registrace?</summary>
+        <div class="article-content">
+          <p>Ano, nástroj je zcela zdarma a bez registrace.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Kolik různých webů si mohu nechat zkontrolovat?</summary>
+        <div class="article-content">
+          <p>Počet různých webů, které si necháte zkontrolovat, není nijak omezený. Jediné omezení je 3 kontroly za 24 hodin z jedné IP adresy — chrání to appku před přetížením, není to limit na počet různých domén.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Co znamená skóre 0–100, které appka ukáže?</summary>
+        <div class="article-content">
+          <p>Skóre shrnuje, jak dobře stránka plní jednotlivé technické SEO signály — meta údaje, mobilní zobrazení, obsah, sdílení na sítích a indexovatelnost. Čím vyšší skóre, tím méně technických překážek stránka pro vyhledávače má. Nejde ale o zaručenou pozici ve výsledcích vyhledávání — tu ovlivňuje mnohem víc faktorů než jen technické SEO.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Je výsledek kontroly webu veřejně dostupný?</summary>
+        <div class="article-content">
+          <p>Pokud zadáte adresu webu ke kontrole, výsledek se uloží jako samostatná veřejná stránka, kterou může najít i Google. Pokud chcete kontrolu čistě soukromě, nahrajte místo adresy přímo HTML soubor — ta proběhne jen ve vašem prohlížeči a nikam se neukládá.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Ukládá appka moje data?</summary>
+        <div class="article-content">
+          <p>Záleží na tom, jak appku použijete. Zadáte-li adresu webu, stránku stáhneme na serveru a výsledek uložíme jako veřejnou stránku, kterou může najít i Google — proto nepoužívejte tento režim pro neindexovaný nebo soukromý obsah. Nahrajete-li místo toho HTML soubor, kontrola proběhne jen lokálně ve vašem prohlížeči a nikam se neposílá.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Proč se u některých souborů kontrola nezdaří?</summary>
+        <div class="article-content">
+          <p>Nejčastěji jde o soubor, který není platný HTML export vašeho webu, nebo o poškozený či prázdný soubor. Zkuste stránku znovu vyexportovat a nahrát výsledný .html soubor znovu.</p>
+        </div>
+      </details>
+
+      <details class="article">
+        <summary>Jak dlouho trvá, než se SEO změny projeví ve vyhledávání?</summary>
+        <div class="article-content">
+          <p>Menší opravy, jako title nebo meta popis, se mohou projevit v řádu dní až týdnů. Větší změny obsahu nebo struktury webu spíš v řádu týdnů až měsíců.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
   <footer class="app-footer">
     <div class="wrap">
       <p>SEOVIP je postavený v nástroji <a href="https://synthlucida.com/landing_webzenith.html" target="_blank" rel="noopener">WEBZENITH</a> — chcete si i vy rychle a bez kódování vytvořit vlastní web? Vyzkoušejte <a href="https://synthlucida.com/landing_webzenith.html" target="_blank" rel="noopener">WEBZENITH</a>.</p>
@@ -990,6 +1093,15 @@
       addCheck(list,"meta","canonical","fail",0,4,"Canonical odkaz","Chybí canonical odkaz.");
     }
 
+    if(canonHref && /^https:\/\//i.test(canonHref)){
+      var insecureEls = doc.querySelectorAll('img[src^="http://"], script[src^="http://"], link[rel="stylesheet"][href^="http://"], iframe[src^="http://"]');
+      if(insecureEls.length === 0){
+        addCheck(list,"meta","mixedcontent","pass",3,3,"Zabezpečený obsah (mixed content)","Nenašli jsme žádné zdroje načítané přes nezabezpečené HTTP.");
+      } else {
+        addCheck(list,"meta","mixedcontent","warn",0,3,"Zabezpečený obsah (mixed content)", insecureEls.length + " zdroj(ů) (obrázek, skript nebo styl) se načítá přes nezabezpečené HTTP, i když stránka je na HTTPS — prohlížeče to mohou blokovat nebo označit jako nedůvěryhodné.");
+      }
+    }
+
     var htmlLang = doc.documentElement.getAttribute("lang");
     if(htmlLang){
       addCheck(list,"meta","lang","pass",2,2,"Jazyk stránky","Nastaveno (lang=\"" + htmlLang + "\").");
@@ -1025,11 +1137,31 @@
       addCheck(list,"mobile","viewport","fail",0,8,"Mobilní zobrazení (viewport)","Chybí meta viewport — stránka se nemusí správně zobrazovat na mobilu.");
     }
 
+    if(viewportEl){
+      var viewportContent = (viewportEl.getAttribute("content") || "").toLowerCase();
+      if(/user-scalable\s*=\s*no/.test(viewportContent) || /maximum-scale\s*=\s*1(\.0)?\b/.test(viewportContent)){
+        addCheck(list,"mobile","viewportzoom","warn",0,3,"Přiblížení stránky (zoom)","Viewport blokuje přibližování (user-scalable=no nebo maximum-scale=1) — ztěžuje to čtení lidem se zrakovým postižením a Google to řadí mezi problémy s mobilní přístupností.");
+      } else {
+        addCheck(list,"mobile","viewportzoom","pass",3,3,"Přiblížení stránky (zoom)","Viewport nezakazuje přibližování.");
+      }
+    }
+
     var faviconEl = doc.querySelector('link[rel~="icon"]');
     if(faviconEl){
       addCheck(list,"mobile","favicon","pass",2,2,"Favicon","Favicon je nastaven.");
     } else {
       addCheck(list,"mobile","favicon","warn",0,2,"Favicon","Nepodařilo se najít favicon.");
+    }
+
+    var manifestEl = doc.querySelector('link[rel="manifest"]');
+    var appleTouchEl = doc.querySelector('link[rel="apple-touch-icon"]');
+    var pwaCount = [manifestEl, appleTouchEl].filter(Boolean).length;
+    if(pwaCount === 2){
+      addCheck(list,"mobile","pwa","pass",2,2,"Ikony a manifest pro mobil","Stránka má web app manifest i apple-touch-icon.");
+    } else if(pwaCount === 1){
+      addCheck(list,"mobile","pwa","warn",1,2,"Ikony a manifest pro mobil", manifestEl ? "Chybí apple-touch-icon (ikona pro přidání na plochu v iOS)." : "Chybí web app manifest (link rel=\"manifest\").");
+    } else {
+      addCheck(list,"mobile","pwa","warn",0,2,"Ikony a manifest pro mobil","Chybí web app manifest i apple-touch-icon — appku/stránku nejde pořádně přidat na plochu mobilu.");
     }
 
     var blankLinks = doc.querySelectorAll('a[target="_blank"]');
@@ -1063,6 +1195,37 @@
       addCheck(list,"content","headings","pass",5,5,"Struktura nadpisů","Stránka používá další úrovně nadpisů (H2 a nižší).");
     } else {
       addCheck(list,"content","headings","warn",0,5,"Struktura nadpisů","Kromě H1 stránka nepoužívá žádné další nadpisy.");
+    }
+
+    var allHeadingLevels = Array.prototype.map.call(doc.querySelectorAll("h1,h2,h3,h4,h5,h6"), function(h){ return parseInt(h.tagName.charAt(1), 10); });
+    var skippedLevel = false;
+    for(var hi = 1; hi < allHeadingLevels.length; hi++){
+      if(allHeadingLevels[hi] - allHeadingLevels[hi-1] > 1){ skippedLevel = true; break; }
+    }
+    if(allHeadingLevels.length === 0){
+      addCheck(list,"content","headingorder","warn",0,3,"Pořadí nadpisů","Stránka nemá žádné nadpisy k vyhodnocení pořadí.");
+    } else if(!skippedLevel){
+      addCheck(list,"content","headingorder","pass",3,3,"Pořadí nadpisů","Úrovně nadpisů na sebe navazují bez přeskočení (např. z H1 rovnou na H3).");
+    } else {
+      addCheck(list,"content","headingorder","warn",0,3,"Pořadí nadpisů","Struktura nadpisů někde přeskakuje úroveň (např. z H1 rovnou na H3) — ztěžuje to orientaci čtečkám obrazovky i vyhledávačům.");
+    }
+
+    var idEls = doc.querySelectorAll("[id]");
+    var seenIds = Object.create(null);
+    var dupeIds = [];
+    idEls.forEach(function(el){
+      var idVal = el.getAttribute("id");
+      if(!idVal) return;
+      if(seenIds[idVal]){
+        if(dupeIds.indexOf(idVal) === -1) dupeIds.push(idVal);
+      } else {
+        seenIds[idVal] = true;
+      }
+    });
+    if(dupeIds.length === 0){
+      addCheck(list,"content","dupeids","pass",2,2,"Platnost HTML (duplicitní ID)","Nenašli jsme duplicitní atributy id.");
+    } else {
+      addCheck(list,"content","dupeids","warn",0,2,"Platnost HTML (duplicitní ID)", "Nalezeno " + dupeIds.length + " duplicitní(ch) ID (např. „" + dupeIds[0] + "“) — může to rozbít odkazy na kotvy a je to neplatné HTML.");
     }
 
     var wc = wordCount(doc);
@@ -1106,6 +1269,18 @@
         addCheck(list,"content","imgdims","warn",ptsDims,4,"Rozměry obrázků (width/height)", missingDims + " z " + imgs.length + " obrázků nemá nastavenou šířku/výšku.");
       } else {
         addCheck(list,"content","imgdims","fail",ptsDims,4,"Rozměry obrázků (width/height)", missingDims + " z " + imgs.length + " obrázků nemá nastavenou šířku/výšku.");
+      }
+    }
+
+    if(imgs.length >= 3){
+      var withSrcset = 0;
+      imgs.forEach(function(img){ if(img.hasAttribute("srcset")) withSrcset++; });
+      if(withSrcset === imgs.length){
+        addCheck(list,"content","srcset","pass",2,2,"Responzivní obrázky (srcset)","Všechny obrázky nabízí víc velikostí přes atribut srcset.");
+      } else if(withSrcset > 0){
+        addCheck(list,"content","srcset","warn",1,2,"Responzivní obrázky (srcset)", (imgs.length - withSrcset) + " z " + imgs.length + " obrázků nenabízí srcset pro různé velikosti obrazovek.");
+      } else {
+        addCheck(list,"content","srcset","warn",0,2,"Responzivní obrázky (srcset)","Žádný obrázek nepoužívá srcset — na mobilu se tak mohou zbytečně stahovat velké obrázky.");
       }
     }
 
