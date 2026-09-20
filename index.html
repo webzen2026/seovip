@@ -347,6 +347,16 @@
   .history-remove:hover{color:var(--fail);border-color:var(--fail);}
   .history-note{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ui-text-dim);margin:10px 0 0;}
 
+  /* ---------- recently checked (public feed, embedded via iframe) ---------- */
+  .recent-wrap{padding:8px 0 40px;border-top:1px solid var(--ui-line);}
+  .recent-head{display:flex;align-items:center;gap:8px;margin:26px 0 4px;}
+  .recent-head h2{font-family:'Manrope',sans-serif;font-size:19px;margin:0;}
+  .recent-live-dot{width:7px;height:7px;border-radius:50%;background:var(--pass);flex:none;
+    animation:recent-pulse 1.6s ease-in-out infinite;}
+  @keyframes recent-pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+  .recent-sub{color:var(--ui-text-dim);font-size:13.5px;margin:0 0 16px;}
+  .recent-frame{width:100%;height:340px;border:1px solid var(--ui-line);border-radius:10px;background:#0b0c10;display:block;}
+
   /* ---------- results ---------- */
   #results{display:none;padding:34px 0 56px;border-top:1px solid var(--ui-line);margin-top:8px;}
   #results.visible{display:block;}
@@ -699,6 +709,17 @@
         <div class="history-list" id="history-list"></div>
         <p class="history-note">Historie zůstává jen ve vašem prohlížeči — nikam se neposílá.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="recent-wrap">
+    <div class="wrap">
+      <div class="recent-head">
+        <span class="recent-live-dot" aria-hidden="true"></span>
+        <h2>Naposledy kontrolované weby</h2>
+      </div>
+      <p class="recent-sub">Podívejte se, jaké weby si právě teď nechali zkontrolovat ostatní.</p>
+      <iframe src="https://seovip.web.app/nedavno-kontrolovane" title="Naposledy kontrolované weby" loading="lazy" class="recent-frame"></iframe>
     </div>
   </section>
 
@@ -2180,5 +2201,6 @@
 
 })();
 </script>
+
 </body>
 </html>
