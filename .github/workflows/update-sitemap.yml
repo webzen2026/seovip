@@ -1,0 +1,38 @@
+# Automaticky generováno appkou SEOVIP (npm run configure).
+#
+# Jednou denně (a kdykoliv ručně přes záložku Actions -> "Run workflow")
+# stáhne z backendu čerstvý seznam veřejných SEO reportů a propíše ho do
+# sitemap.xml na frontendu -- ať Google najde nově zkontrolované weby i
+# přes sitemapu, kterou má appka na týhle (frontendové) doméně.
+name: Aktualizace sitemap.xml (SEO reporty)
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repozitáře
+        uses: actions/checkout@v4
+
+      - name: Nastavit Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Stáhnout reporty z backendu a aktualizovat sitemap.xml
+        run: node .github/scripts/update-sitemap.js
+
+      - name: Commitnout a pushnout změnu (pokud nějaká je)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git diff --cached --quiet || git commit -m "Automatická aktualizace sitemap.xml (nové SEO reporty)"
+          git push
