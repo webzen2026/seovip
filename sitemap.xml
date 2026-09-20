@@ -24,6 +24,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://webzen2026.github.io/seovip/en/privacy.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://webzen2026.github.io/seovip/privacy.html" />
   </url>
+  <url>
+    <loc>https://webzen2026.github.io/seovip/landing.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://webzen2026.github.io/seovip/landing.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzen2026.github.io/seovip/en/landing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webzen2026.github.io/seovip/landing.html" />
+  </url>
+  <url>
+    <loc>https://webzen2026.github.io/seovip/en/landing.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://webzen2026.github.io/seovip/landing.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://webzen2026.github.io/seovip/en/landing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webzen2026.github.io/seovip/landing.html" />
+  </url>
   <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/relaxplayer.eu</loc><lastmod>2026-09-17T08:46:23.601Z</lastmod></url>
   <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/zenradio.com</loc><lastmod>2026-09-16T09:23:09.044Z</lastmod></url>
   <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/chillout.com</loc><lastmod>2026-09-16T09:21:50.504Z</lastmod></url>
