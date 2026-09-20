@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://webzen2026.github.io/seovip/</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://webzen2026.github.io/seovip/" />
@@ -25,4 +24,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://webzen2026.github.io/seovip/en/privacy.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://webzen2026.github.io/seovip/privacy.html" />
   </url>
+  <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/relaxplayer.eu</loc><lastmod>2026-09-17T08:46:23.601Z</lastmod></url>
+  <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/zenradio.com</loc><lastmod>2026-09-16T09:23:09.044Z</lastmod></url>
+  <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/chillout.com</loc><lastmod>2026-09-16T09:21:50.504Z</lastmod></url>
+  <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/seznam.cz</loc><lastmod>2026-09-14T12:03:30.787Z</lastmod></url>
+  <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/noctuarytarot.com</loc><lastmod>2026-09-13T20:06:15.082Z</lastmod></url>
+  <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/di.fm</loc><lastmod>2026-09-13T18:18:31.128Z</lastmod></url>
+  <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/uklidnito.eu</loc><lastmod>2026-09-13T17:41:38.769Z</lastmod></url>
+  <url><loc>https://sitemapreports-63nitv24wa-ey.a.run.app/report/synthlucida.com</loc><lastmod>2026-09-13T15:01:39.469Z</lastmod></url>
 </urlset>
