@@ -1,4 +1,6 @@
 User-agent: *
-Allow: /
-
+Allow: /report/
+Allow: /nedavno-kontrolovane
+Disallow: /api/
+Sitemap: https://seovip.web.app/sitemap-reports.xml
 Sitemap: https://webzen2026.github.io/seovip/sitemap.xml
