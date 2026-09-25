@@ -28,15 +28,6 @@ var path = require("path");
 var BACKEND_SITEMAP_URL = "https://seovip.web.app/sitemap-reports.xml";
 var SITEMAP_PATH = path.join(__dirname, "..", "..", "sitemap.xml");
 
-// Backend teď v sitemapě vrací adresy reportů na interní Cloud Run doméně funkce
-// (https://sitemapreports-….a.run.app/report/…), kde se ale report nezobrazí —
-// ta adresa vrací zase jen sitemapu. Veřejné reporty žijí na seovip.web.app,
-// takže doménu u /report/ adres vždycky přepíšeme na ni.
-var REPORT_ORIGIN = "https://seovip.web.app";
-function fixReportHost(block) {
-  return block.replace(/(<loc>\s*|href=")https?:\/\/[^\/"<\s]+(\/report\/)/g, "$1" + REPORT_ORIGIN + "$2");
-}
-
 function extractUrlBlocks(xml) {
   return xml.match(/<url>[\s\S]*?<\/url>/g) || [];
 }
@@ -54,7 +45,7 @@ async function main() {
     return;
   }
   var backendXml = await res.text();
-  var reportBlocks = extractUrlBlocks(backendXml).map(fixReportHost);
+  var reportBlocks = extractUrlBlocks(backendXml);
 
   var current = fs.readFileSync(SITEMAP_PATH, "utf8");
   // Statické stránky appky (CZ/EN hlavní stránka, zásady ochrany osobních
