@@ -80,8 +80,8 @@
     },
     {
       "@type": "Question",
-      "name": "Does SEOVIP store my data?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It depends on how you use SEOVIP. If you enter a website address, we fetch the page on our server and store the result as a public page that Google can also find — so don’t use this mode for unindexed or private content. If you upload an HTML file instead, the check runs purely locally in your browser and is never sent anywhere. For convenience, your browser also stores a short history of recent checks (name/address and score) locally on your device — you can delete it at any time." }
+      "name": "Does SEOCHECKER store my data?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on how you use SEOCHECKER. If you enter a website address, we fetch the page on our server and store the result as a public page that Google can also find — so don’t use this mode for unindexed or private content. If you upload an HTML file instead, the check runs purely locally in your browser and is never sent anywhere. For convenience, your browser also stores a short history of recent checks (name/address and score) locally on your device — you can delete it at any time." }
     },
     {
       "@type": "Question",
@@ -392,7 +392,7 @@
   }
   .quick-wins ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
   .quick-wins li{
-    display:block;font-size:14px;padding:10px 12px;
+    display:flex;gap:10px;align-items:flex-start;font-size:14px;padding:10px 12px;
     background:var(--ui-bg-2);border:1px solid var(--ui-line);border-left:3px solid var(--warn);
     border-radius:6px;
   }
@@ -629,7 +629,7 @@
 <div class="install-banner" id="install-banner" hidden>
   <div class="wrap install-banner-inner">
     <div class="install-banner-text">
-      <strong>📲 Install SEOVIP</strong>
+      <strong>📲 Install SEOCHECKER</strong>
       <span id="install-banner-desc">Add it to your home screen for quick access, no app store needed.</span>
     </div>
     <div class="install-banner-actions">
@@ -698,7 +698,7 @@
             </svg>
           </button>
         </form>
-        <p class="file-hint">Tip: if you select multiple files at once (a full export of your site), SEOVIP will also verify internal links between pages. This mode is purely local — nothing is sent anywhere or published.</p>
+        <p class="file-hint">Tip: if you select multiple files at once (a full export of your site), SEOCHECKER will also verify internal links between pages. This mode is purely local — nothing is sent anywhere or published.</p>
         <div id="status-region" role="status" aria-live="polite"></div>
       </details>
 
@@ -783,7 +783,7 @@
   <section class="articles-wrap" id="articles">
     <div class="wrap">
       <h2>Articles about SEO</h2>
-      <p class="lead">A quick overview of what SEOVIP actually checks and why it matters.</p>
+      <p class="lead">A quick overview of what SEOCHECKER actually checks and why it matters.</p>
 
       <details class="article">
         <summary>What is SEO and why does it matter</summary>
@@ -985,7 +985,7 @@
 <div class="promo-overlay" id="promo-overlay" hidden>
   <div class="promo-card" role="dialog" aria-modal="true" aria-labelledby="promo-title">
     <button type="button" class="promo-close" id="promo-close" aria-label="Close">✕</button>
-    <h3 id="promo-title">Thanks for using SEOVIP</h3>
+    <h3 id="promo-title">Thanks for using SEOCHECKER</h3>
     <p>Sorry for the interruption — just a quick offer before you go. If you’d like a break from SEO, check out <strong>Relax Player</strong>: ambient music and sounds for focus or sleep, free right in your browser.</p>
     <div class="promo-actions">
       <a class="promo-cta" href="https://relaxplayer.eu" target="_blank" rel="noopener">🎧 Try Relax Player</a>
@@ -1046,28 +1046,10 @@
   function readFileAsText(file){
     return new Promise(function(resolve, reject){
       var reader = new FileReader();
-      reader.onload = function(){
-        try{ resolve(decodeHtmlBytes(reader.result)); }
-        catch(e){ reject(e); }
-      };
+      reader.onload = function(){ resolve(String(reader.result || "")); };
       reader.onerror = function(){ reject(reader.error || new Error("file read error")); };
-      reader.readAsArrayBuffer(file);
+      reader.readAsText(file, "UTF-8");
     });
-  }
-
-  // Older sites are often saved in a legacy encoding (windows-1250 for Czech pages,
-  // windows-1252 elsewhere). Try strict UTF-8 first; otherwise use the declared charset.
-  function decodeHtmlBytes(buf){
-    var bytes = new Uint8Array(buf || new ArrayBuffer(0));
-    if(bytes[0] === 0xFF && bytes[1] === 0xFE) return new TextDecoder("utf-16le").decode(bytes);
-    if(bytes[0] === 0xFE && bytes[1] === 0xFF) return new TextDecoder("utf-16be").decode(bytes);
-    try{ return new TextDecoder("utf-8", {fatal:true}).decode(bytes); }catch(e){}
-    var head = new TextDecoder("windows-1252").decode(bytes.subarray(0, 4096));
-    var m = head.match(/<meta[^>]+charset\s*=\s*["']?\s*([a-z0-9_\-:.]+)/i);
-    var enc = m ? m[1].toLowerCase() : "windows-1252";
-    if(/^utf-?8$/.test(enc)) enc = "windows-1252"; // declared UTF-8 but the bytes aren't
-    try{ return new TextDecoder(enc).decode(bytes); }
-    catch(e2){ return new TextDecoder("windows-1252").decode(bytes); }
   }
 
   function wordCount(doc){
@@ -1724,7 +1706,6 @@
       selectedFilesEl.appendChild(row);
     });
     submitBtn.disabled = chosenPageIndex < 0;
-    if(chosenPageIndex < 0) setStatus(T.errorNoFiles, "error");
   }
 
   function handleFileSelection(fileList){
@@ -2061,17 +2042,10 @@
         headers: checkHeaders,
         body: JSON.stringify({ url: raw, lang: "en" })
       }).then(function(res){
-        // During an outage the server may return an HTML page instead of JSON - don't
-        // show the user a technical message like "Unexpected token '<'".
-        return res.text().then(function(txt){
-          var body = null;
-          try{ body = txt ? JSON.parse(txt) : null; }catch(e){ /* not JSON */ }
-          if(!res.ok) throw new Error(body && body.error ? body.error : ("The server isn’t responding properly right now — please try again in a moment." + " (" + res.status + ")"));
-          if(!body || !Array.isArray(body.checks)) throw new Error("The server isn’t responding properly right now — please try again in a moment.");
+        return res.json().then(function(body){
+          if(!res.ok) throw new Error(body && body.error ? body.error : ("Server responded with error " + res.status));
           return body;
         });
-      }, function(){
-        throw new Error("Couldn’t reach the server. Check your internet connection and try again.");
       }).then(function(data){
         stopLoadingMessages();
         urlSubmitBtn.disabled = false;
