@@ -1,0 +1,16 @@
+{
+  "frontendUrl": "https://webzen2026.github.io/seovip",
+  "backendDomain": "",
+  "siteName": "SEOVIP",
+  "tagline": "Bezplatná SEO kontrola webu",
+  "description": "Bezplatná SEO kontrola webu. Zadejte adresu a získejte přehled SEO signálů — meta údaje, mobilní zobrazení, obsah, sdílení na sítích i indexovatelnost. Bez registrace.",
+  "taglineEn": "Free SEO check for your website",
+  "descriptionEn": "Free SEO check for your website. Enter an address and get an overview of SEO signals — meta tags, mobile view, content, social sharing and indexability. No registration.",
+  "contactEmail": "",
+  "operatorName": "",
+  "firebaseProjectId": "seovip",
+  "region": "europe-west3",
+  "accessMode": "free",
+  "gumroadUrl": "",
+  "unlockCode": ""
+}

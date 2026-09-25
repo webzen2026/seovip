@@ -80,8 +80,8 @@
     },
     {
       "@type": "Question",
-      "name": "Ukládá SEOVIP moje data?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Záleží na tom, jak SEOVIP použijete. Zadáte-li adresu webu, stránku stáhneme na serveru a výsledek uložíme jako veřejnou stránku, kterou může najít i Google — proto nepoužívejte tento režim pro neindexovaný nebo soukromý obsah. Nahrajete-li místo toho HTML soubor, kontrola proběhne jen lokálně ve vašem prohlížeči a nikam se neposílá. Prohlížeč si navíc pro pohodlí ukládá krátkou historii posledních kontrol (název/adresu a skóre) lokálně na vašem zařízení — tu jde kdykoliv smazat." }
+      "name": "Ukládá SEOCHECKER moje data?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Záleží na tom, jak SEOCHECKER použijete. Zadáte-li adresu webu, stránku stáhneme na serveru a výsledek uložíme jako veřejnou stránku, kterou může najít i Google — proto nepoužívejte tento režim pro neindexovaný nebo soukromý obsah. Nahrajete-li místo toho HTML soubor, kontrola proběhne jen lokálně ve vašem prohlížeči a nikam se neposílá. Prohlížeč si navíc pro pohodlí ukládá krátkou historii posledních kontrol (název/adresu a skóre) lokálně na vašem zařízení — tu jde kdykoliv smazat." }
     },
     {
       "@type": "Question",
@@ -392,7 +392,7 @@
   }
   .quick-wins ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
   .quick-wins li{
-    display:block;font-size:14px;padding:10px 12px;
+    display:flex;gap:10px;align-items:flex-start;font-size:14px;padding:10px 12px;
     background:var(--ui-bg-2);border:1px solid var(--ui-line);border-left:3px solid var(--warn);
     border-radius:6px;
   }
@@ -629,7 +629,7 @@
 <div class="install-banner" id="install-banner" hidden>
   <div class="wrap install-banner-inner">
     <div class="install-banner-text">
-      <strong>📲 Nainstalovat SEOVIP</strong>
+      <strong>📲 Nainstalovat SEOCHECKER</strong>
       <span id="install-banner-desc">Přidejte si ji na plochu pro rychlý přístup i bez obchodu s aplikacemi.</span>
     </div>
     <div class="install-banner-actions">
@@ -698,7 +698,7 @@
             </svg>
           </button>
         </form>
-        <p class="file-hint">Tip: pokud vyberete víc souborů najednou (celý export vašeho webu), SEOVIP navíc ověří i interní odkazy mezi stránkami. Tenhle režim je čistě lokální — soubor se nikam neposílá a nic se neukládá veřejně.</p>
+        <p class="file-hint">Tip: pokud vyberete víc souborů najednou (celý export vašeho webu), SEOCHECKER navíc ověří i interní odkazy mezi stránkami. Tenhle režim je čistě lokální — soubor se nikam neposílá a nic se neukládá veřejně.</p>
         <div id="status-region" role="status" aria-live="polite"></div>
       </details>
 
@@ -783,7 +783,7 @@
   <section class="articles-wrap" id="articles">
     <div class="wrap">
       <h2>Články o SEO</h2>
-      <p class="lead">Krátký přehled toho, co SEOVIP vlastně kontroluje a proč na tom záleží.</p>
+      <p class="lead">Krátký přehled toho, co SEOCHECKER vlastně kontroluje a proč na tom záleží.</p>
 
       <details class="article">
         <summary>Co je SEO a proč na něm záleží</summary>
@@ -985,7 +985,7 @@
 <div class="promo-overlay" id="promo-overlay" hidden>
   <div class="promo-card" role="dialog" aria-modal="true" aria-labelledby="promo-title">
     <button type="button" class="promo-close" id="promo-close" aria-label="Zavřít">✕</button>
-    <h3 id="promo-title">Díky, že SEOVIP používáte</h3>
+    <h3 id="promo-title">Díky, že SEOCHECKER používáte</h3>
     <p>Omlouváme se za vyrušení — jen krátká nabídka na závěr. Pokud si chcete od SEO na chvíli odpočinout, mrkněte na <strong>Relax Player</strong>: ambientní hudbu a zvuky pro soustředění nebo usnutí, zdarma přímo v prohlížeči.</p>
     <div class="promo-actions">
       <a class="promo-cta" href="https://relaxplayer.eu" target="_blank" rel="noopener">🎧 Vyzkoušet Relax Player</a>
@@ -1046,28 +1046,10 @@
   function readFileAsText(file){
     return new Promise(function(resolve, reject){
       var reader = new FileReader();
-      reader.onload = function(){
-        try{ resolve(decodeHtmlBytes(reader.result)); }
-        catch(e){ reject(e); }
-      };
+      reader.onload = function(){ resolve(String(reader.result || "")); };
       reader.onerror = function(){ reject(reader.error || new Error("chyba čtení souboru")); };
-      reader.readAsArrayBuffer(file);
+      reader.readAsText(file, "UTF-8");
     });
-  }
-
-  // Older sites are often saved in a legacy encoding (windows-1250 for Czech pages,
-  // windows-1252 elsewhere). Try strict UTF-8 first; otherwise use the declared charset.
-  function decodeHtmlBytes(buf){
-    var bytes = new Uint8Array(buf || new ArrayBuffer(0));
-    if(bytes[0] === 0xFF && bytes[1] === 0xFE) return new TextDecoder("utf-16le").decode(bytes);
-    if(bytes[0] === 0xFE && bytes[1] === 0xFF) return new TextDecoder("utf-16be").decode(bytes);
-    try{ return new TextDecoder("utf-8", {fatal:true}).decode(bytes); }catch(e){}
-    var head = new TextDecoder("windows-1252").decode(bytes.subarray(0, 4096));
-    var m = head.match(/<meta[^>]+charset\s*=\s*["']?\s*([a-z0-9_\-:.]+)/i);
-    var enc = m ? m[1].toLowerCase() : "windows-1250";
-    if(/^utf-?8$/.test(enc)) enc = "windows-1250"; // declared UTF-8 but the bytes aren't
-    try{ return new TextDecoder(enc).decode(bytes); }
-    catch(e2){ return new TextDecoder("windows-1250").decode(bytes); }
   }
 
   function wordCount(doc){
@@ -1724,7 +1706,6 @@
       selectedFilesEl.appendChild(row);
     });
     submitBtn.disabled = chosenPageIndex < 0;
-    if(chosenPageIndex < 0) setStatus(T.errorNoFiles, "error");
   }
 
   function handleFileSelection(fileList){
@@ -2061,17 +2042,10 @@
         headers: checkHeaders,
         body: JSON.stringify({ url: raw })
       }).then(function(res){
-        // Server může při výpadku vrátit HTML stránku místo JSON - nezobrazovat pak
-        // uživateli technickou hlášku typu "Unexpected token '<'".
-        return res.text().then(function(txt){
-          var body = null;
-          try{ body = txt ? JSON.parse(txt) : null; }catch(e){ /* není JSON */ }
-          if(!res.ok) throw new Error(body && body.error ? body.error : ("Server teď neodpovídá správně — zkuste to prosím za chvíli znovu." + " (" + res.status + ")"));
-          if(!body || !Array.isArray(body.checks)) throw new Error("Server teď neodpovídá správně — zkuste to prosím za chvíli znovu.");
+        return res.json().then(function(body){
+          if(!res.ok) throw new Error(body && body.error ? body.error : ("Server odpověděl chybou " + res.status));
           return body;
         });
-      }, function(){
-        throw new Error("Nepodařilo se spojit se serverem. Zkontrolujte připojení k internetu a zkuste to znovu.");
       }).then(function(data){
         stopLoadingMessages();
         urlSubmitBtn.disabled = false;
