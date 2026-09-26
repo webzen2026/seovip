@@ -1,4 +1,4 @@
-# Automaticky generováno appkou SEOVIP (npm run configure).
+# Součást balíčku SEO checkeru — funguje pro každou vygenerovanou appku.
 #
 # Jednou denně (a kdykoliv ručně přes záložku Actions -> "Run workflow")
 # stáhne z backendu čerstvý seznam veřejných SEO reportů a propíše ho do
@@ -24,7 +24,7 @@ jobs:
       - name: Nastavit Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Stáhnout reporty z backendu a aktualizovat sitemap.xml
         run: node .github/scripts/update-sitemap.js
