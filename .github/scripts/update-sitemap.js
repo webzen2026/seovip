@@ -2,11 +2,12 @@
 "use strict";
 
 /**
- * Automaticky generováno appkou SEOVIP (npm run configure).
+ * Součást balíčku SEO checkeru — stejný soubor funguje pro každou
+ * vygenerovanou appku, nic se v něm neupravuje ručně.
  *
  * Spouští se přes GitHub Actions (.github/workflows/update-sitemap.yml) na
  * pravidelném rozvrhu. Stáhne z backendu aktuální dynamickou sitemapu
- * veřejných reportů (https://seovip.web.app/sitemap-reports.xml) a zamíchá ji do
+ * veřejných reportů (<backend>/sitemap-reports.xml) a zamíchá ji do
  * sitemap.xml, kterou má appka na frontendu (tuhle sitemapu čte Google
  * u téhle domény) — takže se nové/aktualizované reporty propíšou i sem,
  * bez ohledu na to, jestli má někdo verifikovanou i tu backendovou
@@ -25,14 +26,31 @@
 var fs = require("fs");
 var path = require("path");
 
-var BACKEND_SITEMAP_URL = "https://seovip.web.app/sitemap-reports.xml";
-var SITEMAP_PATH = path.join(__dirname, "..", "..", "sitemap.xml");
+var REPO_ROOT = path.join(__dirname, "..", "..");
+var SITEMAP_PATH = path.join(REPO_ROOT, "sitemap.xml");
+
+// Adresu backendu bere z index.html appky (řádek var API_BASE = "...";),
+// který generátor vyplní sám — proto tenhle skript funguje pro každou
+// vygenerovanou appku bez ruční úpravy.
+function backendSitemapUrl() {
+  try {
+    var html = fs.readFileSync(path.join(REPO_ROOT, "index.html"), "utf8");
+    var m = html.match(/var\s+API_BASE\s*=\s*"(https?:\/\/[^"]+)"/);
+    if (m) return m[1].replace(/\/+$/, "") + "/sitemap-reports.xml";
+  } catch (e) { /* níž se ohlásí */ }
+  return null;
+}
 
 function extractUrlBlocks(xml) {
   return xml.match(/<url>[\s\S]*?<\/url>/g) || [];
 }
 
 async function main() {
+  var BACKEND_SITEMAP_URL = backendSitemapUrl();
+  if (!BACKEND_SITEMAP_URL) {
+    console.error("V index.html jsem nenašel API_BASE — sitemap.xml nechávám beze změny.");
+    return;
+  }
   var res;
   try {
     res = await fetch(BACKEND_SITEMAP_URL);
@@ -45,7 +63,10 @@ async function main() {
     return;
   }
   var backendXml = await res.text();
-  var reportBlocks = extractUrlBlocks(backendXml);
+  // Jen reporty z backendu (nikdy interní *.run.app adresy).
+  var reportBlocks = extractUrlBlocks(backendXml).filter(function (block) {
+    return block.indexOf(".run.app/") === -1;
+  });
 
   var current = fs.readFileSync(SITEMAP_PATH, "utf8");
   // Statické stránky appky (CZ/EN hlavní stránka, zásady ochrany osobních
