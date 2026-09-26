@@ -247,17 +247,6 @@
   .stat b{display:block;font-family:'Manrope',sans-serif;font-size:24px;color:var(--ui-accent-2);}
   .stat span{font-size:12.5px;color:var(--ui-text-dim);}
 
-  /* ---------- recently checked (public feed, embedded via iframe) ---------- */
-  .recent-section{padding:56px 0;border-bottom:1px solid var(--ui-line);}
-  .eyebrow.with-dot{display:flex;align-items:center;gap:8px;}
-  .recent-live-dot{width:7px;height:7px;border-radius:50%;background:var(--pass);flex:none;
-    animation:recent-pulse 1.6s ease-in-out infinite;}
-  @keyframes recent-pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-  .recent-frame{
-    width:100%;max-width:820px;height:380px;border:1px solid var(--ui-line);border-radius:10px;
-    background:#0b0c10;display:block;
-  }
-
   /* ---------- features ---------- */
   .features{padding:72px 0;}
   .feature-grid{display:grid;grid-template-columns:1fr;gap:16px;}
@@ -425,15 +414,6 @@
       <div class="stat"><b>&lt;15 s</b><span>typický čas kontroly</span></div>
       <div class="stat"><b>30+</b><span>kontrolovaných SEO signálů</span></div>
       <div class="stat"><b>0</b><span>potřebných registrací</span></div>
-    </div>
-  </section>
-
-  <section class="recent-section">
-    <div class="wrap">
-      <p class="eyebrow with-dot"><span class="recent-live-dot" aria-hidden="true"></span>Živě z appky</p>
-      <h2 class="section-title" style="font-size:24px;margin-bottom:8px;">Naposledy kontrolované weby</h2>
-      <p class="section-lead" style="margin-bottom:22px;">Podívejte se, jaké weby si právě teď nechali zkontrolovat ostatní.</p>
-      <iframe src="https://seovip.web.app/nedavno-kontrolovane" title="Naposledy kontrolované weby" loading="lazy" class="recent-frame"></iframe>
     </div>
   </section>
 
